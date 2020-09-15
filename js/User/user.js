@@ -45,10 +45,13 @@ function usersTable() {
                 tbl += '<tr>';
                 tbl += '<td>' + ++index + '</td>';
                 tbl += '<td>' + row.first_name + '</td>';
-                tbl += '<td>' + row.user_name + '</td>';
-                tbl += '<td>' + row.email + '</td>';
-                let joinDate = new Date(row.created_at);
-                tbl += '<td>' + joinDate.toISOString().split('T')[0] + '</td>';
+                tbl += ((row.employee) ? '<td>' + row.employee.designation + '</td>' : '<td>-</td>');
+                tbl += ((row.email != null) ? '<td>' + row.email + '</td>' : '<td>-</td>');
+                if (row.employee) {
+                    tbl += '<td>' + new Date(row.employee.join_date).toISOString().split('T')[0] + '</td>';
+                } else {
+                    tbl += '<td>-</td>';
+                }
                 tbl += '<td><button type="button" value="' + row.id + '" class="btn btn-block btn-success reqActionBtn btn-sm"><i value="' + row.id + '" class="fa fa-edit"></i></button></td>';
                 tbl += '</tr>';
             });
