@@ -948,17 +948,8 @@
                         $('.ifMarriedLb').html('Parent ');
                     }
                 });
-                $('#Initials').on('input', function () {
-                    var input = $(this);
-                    var is_name = input.val();
-                    if (is_name) {
-                        input.removeClass("invalid has-sucess").addClass("valid has-error");
-                    } else {
-                        input.removeClass("valid has-error").addClass("invalid has-success");
-                    }
-                });
                 $("#nic").change(function () {
-                    checkIfNicUnique($(this).val(), function (detect) {
+                    uniqueUserFieldHandler($(this).val(), 2, function (detect) {
                         if (detect.length != 0 && detect != null) {
                             show_message(3, 'This NIC Alrady Taken By Another User!!');
                         }
