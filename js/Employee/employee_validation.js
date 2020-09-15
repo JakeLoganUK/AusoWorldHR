@@ -2,8 +2,8 @@
 //Current Action = save/1 , update/2
 function employeeRequiredFieldHandler(frm_data, action, required_class) {
     var response = true;
-    if (frm_data.basic_salary.length == 0) {
-        toastr.error('Basic Salary Required!');
+    if (frm_data.designation.length == 0) {
+        toastr.error('Designation Required!');
         response = false;
     }
     if (action == 1) {
