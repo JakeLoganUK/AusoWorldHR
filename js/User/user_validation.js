@@ -21,7 +21,7 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
             }
         });
     }
-    if (action == 1) {
+    if (action === 1) { //Actions only in Save
         if (frm_data.password.length == 0) {
             toastr.error('Password Required!');
             response = false;
@@ -30,17 +30,18 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
             toastr.error('Minimum 8 Characters Required For Password!');
             response = false;
         }
+        if (frm_data.user_name) {
+            uniqueUserFieldHandler(frm_data.user_name, 1, function (detect) {
+                if (detect.length != 0 && detect != null) {
+                    show_message(3, 'Username Alrady Taken By Another User!!');
+                    response = false;
+                }
+            });
+        }
     }
     if (frm_data.user_name.length == 0) {
         toastr.error('Username Required!');
         response = false;
-    } else {
-        uniqueUserFieldHandler(frm_data.user_name, 1, function (detect) {
-            if (detect.length != 0 && detect != null) {
-                show_message(3, 'Username Alrady Taken By Another User!!');
-                response = false;
-            }
-        });
     }
     if (frm_data.first_name.length == 0) {
         toastr.error('Firstname Required!');
