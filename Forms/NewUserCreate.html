@@ -811,7 +811,7 @@
                                         "user_id": rec.user_id,
                                         "designation": $("#designation").val(),
                                         "department": $("#department").val(),
-                                        "oin_date": $("#oin_date").val(),
+                                        "join_date": $("#oin_date").val(),
                                         "employee_type": $("#employee_type").val(),
                                         "tire": $("#tire").val(),
                                         "company_email": $("#company_email").val(),
@@ -869,7 +869,7 @@
                         $("#removeEmpBtn").val(resp[0].id);
                         $("#designation").val(resp[0].designation);
                         $("#department").val(resp[0].department);
-                        $("#oin_date").val(resp[0].oin_date);
+                        $("#oin_date").val(resp[0].join_date);
                         $("#employee_type").val(resp[0].employee_type);
                         $("#tire").val(resp[0].tire);
                         $("#company_email").val(resp[0].company_email);
@@ -913,13 +913,16 @@
                                     var currentEmpID = $('#currentEmpID').val();
                                     var emp_Data = {
                                         "user_id": resp.user_id,
-                                        "basic_salary": $("#basic_salary").val(),
-                                        "ot_category": $("#ot_category").val(),
-                                        "fixed_allowance": $("#fixed_allowance").val(),
-                                        "extra_allowance": $("#extra_allowance").val(),
-                                        "attendance_type": $("#attendance_type").val(),
-                                        "salary_categoty": $("#salary_categoty").val(),
-                                        "attendance_type": '1',
+                                        "designation": $("#designation").val(),
+                                        "department": $("#department").val(),
+                                        "join_date": $("#oin_date").val(),
+                                        "employee_type": $("#employee_type").val(),
+                                        "tire": $("#tire").val(),
+                                        "company_email": $("#company_email").val(),
+                                        "employee_status": $("#employee_status").val(),
+                                        "supervisor": $("#supervisor").val(),
+                                        "manager": $("#manager").val(),
+                                        "leave_group": $("#leave_group").val(),
                                         "empyloyee_params": getEmployeeExtraDetails()
                                     };
                                     updateEmployeeAPI(currentEmpID, emp_Data, function (rest) {
