@@ -13,13 +13,6 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
     if (frm_data.nic.length == 0) {
         toastr.error('NIC Required!');
         response = false;
-    } else {
-        uniqueUserFieldHandler(frm_data.nic, 2, function (detect) {
-            if (detect.length != 0 && detect != null) {
-                show_message(3, 'NOTE: This NIC Alrady Taken By Another User!!');
-                response = false;
-            }
-        });
     }
     if (action === 1) { //Actions only in Save
         if (frm_data.password.length == 0) {
@@ -34,6 +27,14 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
             uniqueUserFieldHandler(frm_data.user_name, 1, function (detect) {
                 if (detect.length != 0 && detect != null) {
                     show_message(3, 'Username Alrady Taken By Another User!!');
+                    response = false;
+                }
+            });
+        }
+        if (frm_data.nic) {
+            uniqueUserFieldHandler(frm_data.nic, 2, function (detect) {
+                if (detect.length != 0 && detect != null) {
+                    show_message(3, 'NOTE: This NIC Alrady Taken By Another User!!');
                     response = false;
                 }
             });
