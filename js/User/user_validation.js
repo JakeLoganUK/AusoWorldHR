@@ -62,23 +62,6 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
     return response;
 }
 
-//function checkIfNicUnique(nic, callBack) {
-//    ajaxRequest('GET', base_path + "api/1.0.0/user/nic/" + nic, null, function (dataSet) {
-//        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
-//            callBack(dataSet);
-//        }
-//    });
-//}
-//
-//function checkIfUsernameUnique(uName, callBack) {
-//    ajaxRequest('GET', base_path + "api/1.0.0/user/user_name/" + uName, null, function (dataSet) {
-//        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
-//            callBack(dataSet);
-//        }
-//    });
-//}
-
-
 function uniqueUserFieldHandler(data, field, callBack) {
     let user_field = '';
     if (data) {

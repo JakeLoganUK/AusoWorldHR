@@ -329,14 +329,20 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="form-group" id="Title"> 
+                                                <label for="Title" class="col-sm-3 control-label cuteReq">Initials*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyZup cuteReq" id="initials" placeholder="Initials..">
+                                                </div>  
+                                            </div>
                                             <div class="form-group cuteReq" id="First_Name"> 
-                                                <label for="First_Name" class="col-sm-3 control-label ">First_Name*</label>
+                                                <label for="First_Name" class="col-sm-3 control-label ">First Name*</label>
                                                 <div class="col-sm-9"> 
                                                     <input type="text" class="form-control onlyZup cuteReq" id="first_Name" placeholder="First_Name">
                                                 </div> 
                                             </div> 
                                             <div class="form-group" id="Last_Name"> 
-                                                <label for="Last_Name" class="col-sm-3 control-label">Last_Name</label>
+                                                <label for="Last_Name" class="col-sm-3 control-label">Last Name</label>
                                                 <div class="col-sm-9"> 
                                                     <input type="text" class="form-control onlyZup" id="last_Name" placeholder="Last_Name">
                                                 </div> 
@@ -362,7 +368,7 @@
                                             <div class="form-group cuteReq" id="NIC"> 
                                                 <label for="NIC" class="col-sm-3 control-label">NIC*</label>
                                                 <div class="col-sm-9"> 
-                                                    <input type="text" class="form-control cuteReq onlyZupNum" id="nic" placeholder="NIC">
+                                                    <input type="text" maxlength="12" class="form-control cuteReq onlyZupNum" id="nic" placeholder="NIC">
                                                 </div>  
                                             </div>
                                             <div class="form-group cuteReq" id="DateOfBirth"> 
@@ -379,12 +385,6 @@
                                                         <option value="Female">Female</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="form-group" id="Title"> 
-                                                <label for="Title" class="col-sm-3 control-label cuteReq">Initials*</label>
-                                                <div class="col-sm-9"> 
-                                                    <input type="text" class="form-control onlyZup cuteReq" id="initials" placeholder="Initials..">
-                                                </div>  
                                             </div>
                                             <div class="form-group" id="Religion"> 
                                                 <label for="Religion" class="col-sm-3 control-label">Religion</label>
@@ -561,60 +561,72 @@
                                             <div class="form-group"> 
                                                 <label for="Designation" class="col-sm-3 control-label">Designation*</label>
                                                 <div class="col-sm-9"> 
-                                                    <input type="text" class="form-control" id="designation" placeholder="Designation">
+                                                    <input type="text" class="form-control onlyZup" id="designation" placeholder="Enter Designation">
                                                 </div> 
                                             </div> 
                                             <div class="form-group cuteReq" > 
-                                                <label for="Department" class="col-sm-3 control-label">Basic_salary*</label>
+                                                <label for="Department" class="col-sm-3 control-label">Department</label>
                                                 <div class="col-sm-9"> 
-                                                    <input type="text" class="form-control cuteReq onlyNum" id="basic_salary" placeholder="Basic salary..">
+                                                    <input type="text" class="form-control cuteReq" id="department" placeholder="Enter Department..">
                                                 </div> 
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">OT Category*</label>
+                                                <label class="col-sm-3 control-label">Join Date</label>
                                                 <div class="col-sm-9"> 
-                                                    <select id="ot_category" class="form-control">
+                                                    <input type="date" class="form-control cuteReq pull-right" id="oin_date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Employee Type</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="employee_type" class="form-control">
                                                         <option value="0">Active</option>
                                                         <option value="1">Inactive</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">Fixed Allowance*</label>
+                                                <label class="col-sm-3 control-label">Tire</label>
                                                 <div class="col-sm-9"> 
-                                                    <select id="fixed_allowance" class="form-control">
-                                                        <option value="0">Active</option>
-                                                        <option value="1">Inactive</option>
+                                                    <select id="tire" class="form-control">
+                                                        <option value="0">Tire 1</option>
+                                                        <option value="1">Tire 2</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">Extra Allowance*</label>
+                                                <label class="col-sm-3 control-label">Company Email</label>
                                                 <div class="col-sm-9"> 
-                                                    <select id="extra_allowance" class="form-control">
-                                                        <option value="0">Active</option>
-                                                        <option value="1">Inactive</option>
-                                                    </select>
+                                                    <input type="Email" class="form-control onlyEmail" id="company_email" placeholder="Company Email">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">Attendance Type</label>
+                                                <label class="col-sm-3 control-label">Employee Status*</label>
                                                 <div class="col-sm-9"> 
-                                                    <select id="attendance_type" class="form-control">
+                                                    <select id="employee_status" class="form-control">
                                                         <option value="0">Active</option>
                                                         <option value="1">Inactive</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Salary Categoty*</label>
+                                            <div class="form-group" id="Working_Experience"> 
+                                                <label for="Working_Experience" class="col-sm-3 control-label">Supervisor</label>
                                                 <div class="col-sm-9"> 
-                                                    <select id="salary_categoty" class="form-control">
-                                                        <option value="0">Active</option>
-                                                        <option value="1">Inactive</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                                    <input type="text" class="form-control" id="supervisor" placeholder="Supervisor">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Working_Experience"> 
+                                                <label for="Working_Experience" class="col-sm-3 control-label">Manager</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="manager" placeholder="Manager">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Working_Experience"> 
+                                                <label for="Working_Experience" class="col-sm-3 control-label">Leave Group</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="leave_group" placeholder="Leave Group">
+                                                </div> 
+                                            </div> 
                                         </div>
                                         <!-- /.box-body -->
                                         <div class="box-footer"> 
@@ -643,7 +655,6 @@
                                                 <div class="col-sm-9"> 
                                                     <input type="text" class="form-control" id="working_Experience" placeholder="Working Experience">
                                                 </div> 
-
                                             </div> 
                                             <div class="form-group" id="First_Employer"> 
                                                 <label for="First_Employer" class="col-sm-3 control-label">First Employer</label>
@@ -798,12 +809,16 @@
                                 if ($('#designation').val().length != 0) {
                                     var emp_Data = {
                                         "user_id": rec.user_id,
-                                        "basic_salary": $("#basic_salary").val(),
-                                        "ot_category": $("#ot_category").val(),
-                                        "fixed_allowance": $("#fixed_allowance").val(),
-                                        "extra_allowance": $("#extra_allowance").val(),
-                                        "attendance_type": $("#attendance_type").val(),
-                                        "salary_categoty": $("#salary_categoty").val(),
+                                        "designation": $("#designation").val(),
+                                        "department": $("#department").val(),
+                                        "oin_date": $("#oin_date").val(),
+                                        "employee_type": $("#employee_type").val(),
+                                        "tire": $("#tire").val(),
+                                        "company_email": $("#company_email").val(),
+                                        "employee_status": $("#employee_status").val(),
+                                        "supervisor": $("#supervisor").val(),
+                                        "manager": $("#manager").val(),
+                                        "leave_group": $("#leave_group").val(),
                                         "empyloyee_params": getEmployeeExtraDetails()
                                     };
                                     if (employeeRequiredFieldHandler(emp_Data, 1, ".cuteReq")) {
@@ -852,12 +867,16 @@
                     getEmployeeByUserAPI(currentBtn, function (resp) {
                         $("#currentEmpID").val(resp[0].id);
                         $("#removeEmpBtn").val(resp[0].id);
-                        $("#basic_salary").val(resp[0].basic_salary);
-                        $("#ot_category").val(resp[0].ot_category);
-                        $("#fixed_allowance").val(resp[0].fixed_allowance);
-                        $("#extra_allowance").val(resp[0].extra_allowance);
-                        $("#attendance_type").val(resp[0].attendance_type);
-                        $("#salary_categoty").val(resp[0].salary_categoty);
+                        $("#designation").val(resp[0].designation);
+                        $("#department").val(resp[0].department);
+                        $("#oin_date").val(resp[0].oin_date);
+                        $("#employee_type").val(resp[0].employee_type);
+                        $("#tire").val(resp[0].tire);
+                        $("#company_email").val(resp[0].company_email);
+                        $("#employee_status").val(resp[0].employee_status);
+                        $("#supervisor").val(resp[0].supervisor);
+                        $("#manager").val(resp[0].manager);
+                        $("#leave_group").val(resp[0].leave_group);
                         if (resp.length != 0) {
                             $('#removeEmpBtn').removeClass('hidden');
                         }
