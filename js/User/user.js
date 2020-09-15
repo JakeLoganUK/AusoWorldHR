@@ -46,10 +46,9 @@ function usersTable() {
                 tbl += '<td>' + ++index + '</td>';
                 tbl += '<td>' + row.first_name + '</td>';
                 tbl += '<td>' + row.user_name + '</td>';
-                tbl += '<td>' + row.nic + '</td>';
+                tbl += '<td>' + row.email + '</td>';
                 let joinDate = new Date(row.created_at);
                 tbl += '<td>' + joinDate.toISOString().split('T')[0] + '</td>';
-                tbl += '<td>' + row.email + '</td>';
                 tbl += '<td><button type="button" value="' + row.id + '" class="btn btn-block btn-success reqActionBtn btn-sm"><i value="' + row.id + '" class="fa fa-edit"></i></button></td>';
                 tbl += '</tr>';
             });

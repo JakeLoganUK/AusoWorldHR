@@ -709,10 +709,9 @@
                                                 <th style="width:40px">#</th>
                                                 <th>First Name</th>
                                                 <th>Designation</th>
-                                                <th>NIC</th>
+                                                <th>Email</th>
                                                 <th>Join Date</th>
-                                                <th style="width:60px">Email</th>
-                                                <th>Action</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -796,7 +795,7 @@
                     if (userRequiredFieldHandler(data, 1, ".cuteReq")) {
                         createUser(data, function (rec) { //-Creating User
                             if (rec.id == 1) {
-                                if ($('#basic_salary').val().length != 0) {
+                                if ($('#designation').val().length != 0) {
                                     var emp_Data = {
                                         "user_id": rec.user_id,
                                         "basic_salary": $("#basic_salary").val(),
