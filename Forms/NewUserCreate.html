@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CopreusHR | Create New User</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+        <link href="../dist/css/toastr.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <!-- Site wrapper -->
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+
+                <a href="../index.html" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>C</b>HR</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>Copreus</b>HR</span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Messages: style can be found in dropdown.less-->
+                            <li class="dropdown messages-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="label label-success">4</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 4 messages</li>
+                                    <li>
+                                        <!-- inner menu: contains the actual data -->
+                                        <ul class="menu">
+                                            <li><!-- start message -->
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>
+                                                        Support Team
+                                                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                    </h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li><!-- end message -->
+                                        </ul>
+                                    </li>
+                                    <li class="footer"><a href="#">See All Messages</a></li>
+                                </ul>
+                            </li>
+                            <!-- Notifications: style can be found in dropdown.less -->
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-bell-o"></i>
+                                    <span class="label label-warning">10</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 10 notifications</li>
+                                    <li>
+                                        <!-- inner menu: contains the actual data -->
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer"><a href="#">View all</a></li>
+                                </ul>
+                            </li>
+                            <!-- Tasks: style can be found in dropdown.less -->
+                            <li class="dropdown tasks-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-flag-o"></i>
+                                    <span class="label label-danger">9</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 9 tasks</li>
+                                    <li>
+                                        <!-- inner menu: contains the actual data -->
+                                        <ul class="menu">
+                                            <li><!-- Task item -->
+                                                <a href="#">
+                                                    <h3>
+                                                        Design some buttons
+                                                        <small class="pull-right">20%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">20% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li><!-- end task item -->
+                                        </ul>
+                                    </li>
+                                    <li class="footer">
+                                        <a href="#">View all tasks</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">Admin User</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                        <p>
+                                            Admin User
+                                            <small>Member since Jan. 2020</small>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="javascript:logOutUser();" class="btn btn-default btn-flat">Sign out</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </header>
+
+            <!-- =============================================== -->
+
+            <!-- Left side column. contains the sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <p>Admin User</p>
+                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        </div>
+                    </div>
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="header">MAIN NAVIGATION</li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                                <!--<li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i>
+                                <span>Includes & Updates</span>
+                                <span class="label label-info">7</span>
+                                <span class="fa fa-angle-left pull-right"></span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../layouts/Includes & Updates/Banks/bank.html"><i class="fa fa-circle-o"></i> Banks</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Common Data</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Department</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Designation</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Employee Edit</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Holidays</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> New Employee</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Payroll</span>
+                                <span class="label label-info">3</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="fa fa-circle-o"></i> Salary Advance</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Staff Loans</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Salary Payment</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>Daily Data</span>
+                                <span class="label label-info">5</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="fa fa-circle-o"></i> Attendance Confirmation</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Attendance Deletion</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Attendance Error Viewer</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Gate Pass / Short Leave</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> Partial Attendance</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>User Account</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href=""><i class="fa fa-circle-o"></i> Create New User</a></li>
+                                <li><a href=""><i class="fa fa-circle-o"></i> View All Users</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../pages/calendar.html">
+                                <i class="fa fa-calendar"></i> <span>Calendar</span>
+                                <small class="label pull-right bg-red">3</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../pages/mailbox/mailbox.html">
+                                <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                                <small class="label pull-right bg-yellow">12</small>
+                            </a>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- =============================================== -->
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Create New User
+                        <small>it all starts here</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="#">User Accounts</a></li>
+                        <li class="active">New User</li>
+                    </ol>
+                </section>
+
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <!-- AREA CHART -->
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Personal Information</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <!-- Personal Informations-->
+                                <div class="box-body" style="display: block;">
+
+                                    <!-- form start -->
+                                    <form class="form-horizontal">
+                                        <div class="box-body"> 
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label cuteReq">Title*</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="title" class="form-control cuteReq">
+                                                        <option value="Mr">Mr.</option>
+                                                        <option value="Mrs">Mrs.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group cuteReq" id="First_Name"> 
+                                                <label for="First_Name" class="col-sm-3 control-label ">First_Name*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyZup cuteReq" id="first_Name" placeholder="First_Name">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Last_Name"> 
+                                                <label for="Last_Name" class="col-sm-3 control-label">Last_Name</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyZup" id="last_Name" placeholder="Last_Name">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Surname"> 
+                                                <label for="Surname" class="col-sm-3 control-label">Surname</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyZup" id="surname" placeholder="Surname">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group cuteReq" id="Initials"> 
+                                                <label for="Initials" class="col-sm-3 control-label">Username*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control cuteReq" id="username" placeholder="Initials">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group cuteReq" id="Initials"> 
+                                                <label for="Initials" class="col-sm-3 control-label">Password*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="password" class="form-control cuteReq" id="password" placeholder="Initials">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group cuteReq" id="NIC"> 
+                                                <label for="NIC" class="col-sm-3 control-label">NIC*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control cuteReq onlyZupNum" id="nic" placeholder="NIC">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group cuteReq" id="DateOfBirth"> 
+                                                <label for="DateOfBirth" class="col-sm-3 control-label">Date Of Birth*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="date" class="form-control cuteReq pull-right" id="dateOfBirth">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Gender</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="gender" class="form-control">
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="Title"> 
+                                                <label for="Title" class="col-sm-3 control-label">Initials</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="initials" placeholder="Initials..">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group" id="Religion"> 
+                                                <label for="Religion" class="col-sm-3 control-label">Religion</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyZup" id="religion" placeholder="Religion">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group" id="Nationality"> 
+                                                <label for="Nationality" class="col-sm-3 control-label">Nationality</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyZup" id="nationality" placeholder="Nationality">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group" id="Race"> 
+                                                <label for="Race" class="col-sm-3 control-label">Race</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="race" placeholder="Race">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Civil Status</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="civil_Status" class="form-control">
+                                                        <option value="Married">Married</option>
+                                                        <option value="Unmarried">Unmarried</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Status</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="status" class="form-control">
+                                                        <option value="Active">Active</option>
+                                                        <option value="Inactive">Inactive</option>
+                                                        <option value="Archived">Archived</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                        <div class="box-footer"> 
+
+                                        </div>
+                                        <!-- /.box-footer -->
+                                    </form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+                            <!-- Contact -->
+                            <div class="box box-info  collapsed-box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Contact</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <!-- form start -->
+                                    <form class="form-horizontal">
+                                        <div class="box-body"> 
+                                            <div class="form-group" id="Permanent_Address"> 
+                                                <label for="Permanent_Address" class="col-sm-3 control-label">Permanent Address</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="permanent_Address" placeholder="Permanent Address">
+                                                </div> 
+
+                                            </div> 
+                                            <div class="form-group" id="Email"> 
+                                                <label for="Email" class="col-sm-3 control-label">Email</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="Email" class="form-control onlyEmail" id="email" placeholder="Email">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Mobile"> 
+                                                <label for="Mobile" class="col-sm-3 control-label">Mobile</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyNum" id="mobile" placeholder="Mobile">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Land_Line"> 
+                                                <label for="Land_Line" class="col-sm-3 control-label">Land Line</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control onlyNum" id="land_Line" placeholder="Land Line">
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                        <div class="box-footer"> 
+
+                                        </div>
+                                        <!-- /.box-footer -->
+                                    </form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+                            <!-- Other -->
+                            <div class="box box-info collapsed-box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Other</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <!-- form start -->
+                                    <form class="form-horizontal">
+                                        <div class="box-body"> 
+                                            <div class="form-group" id="Blood_Group"> 
+                                                <label for="Blood_Group" class="col-sm-3 control-label">Blood Group</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="blood_Group" placeholder="Blood Group">
+                                                </div> 
+
+                                            </div> 
+                                            <div class="form-group" id="Edu_1"> 
+                                                <label for="edu_1" class="col-sm-3 control-label">Edu_1</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="edu_1" placeholder="Edu_1">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="edu_2"> 
+                                                <label for="edu_2" class="col-sm-3 control-label">Edu_2</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="edu_2" placeholder="Edu_2">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Residence_Address"> 
+                                                <label for="Residence_Address" class="col-sm-3 control-label">Residence Address</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="residence_Address" placeholder="Residence Address">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group" id="Emergency_Contact"> 
+                                                <label for="Emergency_Contact" class="col-sm-3 control-label">Emergency Contact</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="emergency_Contact" placeholder="Emergency Contact">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group" id="SPName"> 
+                                                <label for="SPName" class="col-sm-3 control-label"><b class="ifMarriedLb"></b> Name</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="sPName" placeholder="Spouse / Parent Name">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group" id="SPContact"> 
+                                                <label for="SPContact" class="col-sm-3 control-label "><b class="ifMarriedLb"></b> Contact</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="sPContact" placeholder="Spouse / Parent Contact">
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                        <div class="box-footer"> 
+
+                                        </div>
+                                        <!-- /.box-footer -->
+                                    </form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+                            <!-- Employee -->
+                            <div class="box box-info collapsed-box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Employee</h3>
+                                    <input type="text" class="form-control hidden" id="currentEmpID">
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <!-- form start -->
+                                    <form class="form-horizontal">
+                                        <div class="box-body"> 
+                                            <div class="form-group"> 
+                                                <label for="Designation" class="col-sm-3 control-label">Designation*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="designation" placeholder="Designation">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group cuteReq" > 
+                                                <label for="Department" class="col-sm-3 control-label">Basic_salary*</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control cuteReq" id="basic_salary" placeholder="Department">
+                                                </div> 
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">OT Category*</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="ot_category" class="form-control">
+                                                        <option value="0">Active</option>
+                                                        <option value="1">Inactive</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Fixed Allowance*</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="fixed_allowance" class="form-control">
+                                                        <option value="0">Active</option>
+                                                        <option value="1">Inactive</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Extra Allowance*</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="extra_allowance" class="form-control">
+                                                        <option value="0">Active</option>
+                                                        <option value="1">Inactive</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Attendance Type</label>
+                                                <div class="col-sm-9"> 
+                                                    <select id="attendance_type" class="form-control">
+                                                        <option value="0">Active</option>
+                                                        <option value="1">Inactive</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="Emp_status"> 
+                                                <label for="Emp_status" class="col-sm-3 control-label">Salary Categoty</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="salary_categoty" placeholder="Employee Status">
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                        <div class="box-footer"> 
+
+                                        </div>
+                                        <!-- /.box-footer -->
+                                    </form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+
+                            <!-- Extra Informations -->
+                            <div class="box box-info collapsed-box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Extra Informations</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <!-- form start -->
+                                    <form class="form-horizontal">
+                                        <div class="box-body"> 
+                                            <div class="form-group" id="Working_Experience"> 
+                                                <label for="Working_Experience" class="col-sm-3 control-label">Working Experience</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="working_Experience" placeholder="Working Experience">
+                                                </div> 
+
+                                            </div> 
+                                            <div class="form-group" id="First_Employer"> 
+                                                <label for="First_Employer" class="col-sm-3 control-label">First Employer</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="first_Employer" placeholder="First Employer">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Last_Employer"> 
+                                                <label for="Last_Employer" class="col-sm-3 control-label">Last Employer</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="last_Employer" placeholder="Last Employer">
+                                                </div> 
+                                            </div> 
+                                            <div class="form-group" id="Rate"> 
+                                                <label for="Rate" class="col-sm-3 control-label">Rate</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="rate_1" placeholder="Rate">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group" id="Confirmation_date"> 
+                                                <label for="Confirmation_date" class="col-sm-3 control-label">Confirmation date</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" class="form-control" id="confirmation_date" placeholder="Confirmation date">
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <!-- /.box-body -->
+                                        <div class="box-footer"> 
+
+                                        </div>
+                                        <!-- /.box-footer -->
+                                    </form>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+
+                            <!-- Default box -->
+                            <div class="box">
+
+                                <div class="box-body">
+                                    <a href="javascript:resetClientSideData();" class="btn btn-default">Cancel</a>
+                                    <button type="submit" id="saveBtn" class="btn btn-info pull-right basic_Save">Save</button>
+                                    <button  id="updateBtn" class="btn btn-warning hidden">Update</button>
+                                    <button  id="removeBtn" class="btn btn-danger pull-right hidden">Remove</button>
+                                    <button  id="removeEmpBtn" class="btn btn-danger pull-right hidden">Remove Employee</button>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+                        </div><!-- /.col (LEFT) -->
+                        <div class="col-md-7">
+                            <!-- BAR CHART -->
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">List Of Current Users</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <table id="userList" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:40px">#</th>
+                                                <th>First Name</th>
+                                                <th>Designation</th>
+                                                <th>NIC</th>
+                                                <th>Join Date</th>
+                                                <th style="width:60px">Email</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+                        </div><!-- /.col (RIGHT) -->
+                    </div><!-- /.row -->
+
+                </section>
+
+            </div><!-- /.content-wrapper -->
+
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 1.0.0
+                </div>
+                <strong>Copyright &copy; 2020 - 50 Years  <a href="http://www.ausoworld.com/">Auso World</a>.</strong> All rights reserved.
+            </footer>
+
+            <!-- Add the sidebar's background. This div must be placed
+                 immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+        </div><!-- ./wrapper -->
+
+        <!-- jQuery 2.1.4 -->
+        <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <!-- SlimScroll -->
+        <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../plugins/fastclick/fastclick.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../dist/js/app.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../dist/js/demo.js"></script>
+        <script src="../js/check_login.js" type="text/javascript"></script>
+        <script src="../js/funtions.js" type="text/javascript"></script>
+        <script src="../js/User/user.js" type="text/javascript"></script>
+        <script src="../js/Employee/main_employee.js" type="text/javascript"></script>
+        <script src="../js/User/user_validation.js" type="text/javascript"></script>
+        <script src="../js/Employee/employee_validation.js" type="text/javascript"></script>
+        <script src="../js/Functions/common_validations.js" type="text/javascript"></script>
+        <script src="../dist/js/toastr.min.js" type="text/javascript"></script>
+        <!-- page script -->
+        <script>
+            var USER_ID = '';
+            $(function () {
+                usersTable(); //<-Load Table
+                $('.ifMarriedLb').html('Spouse');
+                //Save User
+                $("#saveBtn").click(function () {
+                    var data = {
+                        "user_name": $("#username").val(),
+                        "initials": $("#initials").val(),
+                        "first_name": $("#first_Name").val(),
+                        "last_name": $("#last_Name").val(),
+                        "surname": $("#surname").val(),
+                        "nic": $("#nic").val(),
+                        "date_of_birth": $("#dateOfBirth").val(),
+                        "gender": $("#gender").val(),
+                        "title": $("#title").val(),
+                        "religion": $("#religion").val(),
+                        "nationality": $("#nationality").val(),
+                        "race": $("#race").val(),
+                        "email": $("#email").val(),
+                        "mobile": $("#mobile").val(),
+                        "land_line": $("#land_Line").val(),
+                        "status": $("#status").val(),
+                        "civil_status": $("#civil_Status").val(),
+                        "password": $("#password").val(),
+                        "address": $("#permanent_Address").val(),
+                        "userParams": getOtherDetails()
+                    };
+                    if (userRequiredFieldHandler(data, 1, ".cuteReq")) {
+                        createUser(data, function (rec) { //-Creating User
+                            if (rec.id == 1) {
+                                if ($('#basic_salary').val().length != 0) {
+                                    var emp_Data = {
+                                        "user_id": rec.user_id,
+                                        "basic_salary": $("#basic_salary").val(),
+                                        "ot_category": $("#ot_category").val(),
+                                        "fixed_allowance": $("#fixed_allowance").val(),
+                                        "extra_allowance": $("#extra_allowance").val(),
+                                        "attendance_type": $("#attendance_type").val(),
+                                        "salary_categoty": $("#salary_categoty").val(),
+                                        "empyloyee_params": getEmployeeExtraDetails()
+                                    };
+                                    if (employeeRequiredFieldHandler(emp_Data, 1, ".cuteReq")) {
+                                        createEmployee(emp_Data, function (respEmp) { //-Creating Employee
+                                            if (respEmp.id == 1) {
+                                                usersTable();
+                                                resetClientSideData();
+                                            }
+                                            show_result_alert(respEmp, 'Employee Created!');
+                                        });
+                                    }
+                                }
+                                usersTable();
+                                resetClientSideData();
+                            }
+                            show_result_alert(rec, 'User Created');
+                        });
+                    }
+                });
+//Table Action Button
+                $(document).on('click', '.reqActionBtn', function () {
+                    let currentBtn = $(this).val();
+                    getUserByIdAPI(currentBtn, function (set) {
+                        $("#username").val(set.user_name);
+                        $("#initials").val(set.initials);
+                        $("#first_Name").val(set.first_name);
+                        $("#last_Name").val(set.last_name);
+                        $("#surname").val(set.surname);
+                        $("#nic").val(set.nic);
+                        $("#dateOfBirth").val(set.date_of_birth);
+                        $("#gender").val(set.gender);
+                        $("#title").val(set.title);
+                        $("#religion").val(set.religion);
+                        $("#nationality").val(set.nationality);
+                        $("#race").val(set.race);
+                        $("#email").val(set.email);
+                        $("#mobile").val(set.mobile);
+                        $("#land_Line").val(set.land_line);
+                        $("#status").val(set.status);
+                        $("#civil_Status").val(set.civil_status);
+                        $("#permanent_Address").val(set.address);
+                        $("#updateBtn").val(set.id);
+                        $("#removeBtn").val(set.id);
+                        setupBtnEnv();
+                    });
+                    getEmployeeByUserAPI(currentBtn, function (resp) {
+                        $("#currentEmpID").val(resp[0].id);
+                        $("#removeEmpBtn").val(resp[0].id);
+                        $("#basic_salary").val(resp[0].basic_salary);
+                        $("#ot_category").val(resp[0].ot_category);
+                        $("#fixed_allowance").val(resp[0].fixed_allowance);
+                        $("#extra_allowance").val(resp[0].extra_allowance);
+                        $("#attendance_type").val(resp[0].attendance_type);
+                        $("#salary_categoty").val(resp[0].salary_categoty);
+                        if (resp.length != 0) {
+                            $('#removeEmpBtn').removeClass('hidden');
+                        }
+                    });
+                });
+                //Update User
+                $("#updateBtn").click(function () {
+                    var data = {
+                        "user_name": $("#username").val(),
+                        "initials": $("#initials").val(),
+                        "first_name": $("#first_Name").val(),
+                        "last_name": $("#last_Name").val(),
+                        "surname": $("#surname").val(),
+                        "nic": $("#nic").val(),
+                        "date_of_birth": $("#dateOfBirth").val(),
+                        "gender": $("#gender").val(),
+                        "title": $("#title").val(),
+                        "religion": $("#religion").val(),
+                        "nationality": $("#nationality").val(),
+                        "race": $("#race").val(),
+                        "email": $("#email").val(),
+                        "mobile": $("#mobile").val(),
+                        "land_line": $("#land_Line").val(),
+                        "status": $("#status").val(),
+                        "civil_status": $("#civil_Status").val(),
+//                        "password": $("#password").val(),
+//                        "address": $("#permanent_Address").val(),
+                        "userParams": getOtherDetails()
+                    };
+                    if (userRequiredFieldHandler(data, 2, ".cuteReq")) {
+                        updateUserAPI($(this).val(), data, function (resp) {
+                            if (resp.id == 1) {
+                                if ($('#designation').val().length != 0) { //-Only Update if exist this field
+                                    var currentEmpID = $('#currentEmpID').val();
+                                    var emp_Data = {
+                                        "user_id": resp.user_id,
+                                        "basic_salary": $("#basic_salary").val(),
+                                        "ot_category": $("#ot_category").val(),
+                                        "fixed_allowance": $("#fixed_allowance").val(),
+                                        "extra_allowance": $("#extra_allowance").val(),
+                                        "attendance_type": $("#attendance_type").val(),
+                                        "salary_categoty": $("#salary_categoty").val(),
+                                        "attendance_type": '1',
+                                        "empyloyee_params": getEmployeeExtraDetails()
+                                    };
+                                    updateEmployeeAPI(currentEmpID, emp_Data, function (rest) {
+                                        usersTable();
+                                        show_result_alert(rest, 'Employee Updated');
+                                        resetClientSideData();
+                                    });
+                                }
+                                resetClientSideData();
+                                usersTable();
+                            }
+                            show_result_alert(resp, 'User Updated!');
+                        });
+                    }
+                });
+                //Remove User
+                $("#removeBtn").click(function () {
+                    removeUserAPI($(this).val(), function (rec) {
+                        if (rec.id === 1) {
+                            usersTable();
+                            resetClientSideData();
+                        }
+                        show_result_alert(rec, 'User Removed');
+                    });
+                });
+                $("#removeEmpBtn").click(function () {
+                    removeEmployeeAPI($(this).val(), function (rec) {
+                        if (rec.id === 1) {
+                            usersTable();
+                            resetClientSideData();
+                        }
+                        show_result_alert(rec, 'Employee Removed');
+                    });
+                });
+
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $("#civil_Status").change(function () {
+                    if ($(this).val() === 'Married') {
+                        $('.ifMarriedLb').html('Spouse ');
+                    } else {
+                        $('.ifMarriedLb').html('Parent ');
+                    }
+                });
+
+                $('#Initials').on('input', function () {
+                    var input = $(this);
+                    var is_name = input.val();
+                    if (is_name) {
+                        input.removeClass("invalid has-sucess").addClass("valid has-error");
+                    } else {
+                        input.removeClass("valid has-error").addClass("invalid has-success");
+                    }
+                });
+            });
+            function resetClientSideData() {
+                $("#username").val('');
+                $("#initials").val('');
+                $("#first_Name").val('');
+                $("#last_Name").val('');
+                $("#surname").val('');
+                $("#nic").val('');
+                $("#dateOfBirth").val('');
+//                $("#gender").val('');
+//                $("#title").val('');
+                $("#religion").val('');
+                $("#nationality").val('');
+                $("#race").val('');
+                $("#email").val('');
+                $("#mobile").val('');
+                $("#land_Line").val('');
+//                $("#status").val('');
+                $("#password").val('');
+//                $("#civil_Status").val('');
+                $('#saveBtn').val('');
+                $('#removeBtn').val('');
+                $('#updateBtn').val('');
+                $('#saveBtn').removeClass('hidden');
+                $('#removeBtn').addClass('hidden');
+                $('#updateBtn').addClass('hidden');
+                $('#removeEmpBtn').addClass('hidden');
+            }
+
+        </script>
+
+
+    </body>
+</html>
