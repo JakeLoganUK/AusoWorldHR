@@ -50,5 +50,13 @@ function show_result_alert(response, msg) {
         //This must be improve with error msg
         toastr.error('Error! | Failed To Complete Task.');
     }
-
+}
+function show_message(type, msg) { //Type - Success = 1, Warn = 2 & Error = 3
+    if (type === 1) {
+        toastr.success(msg);
+    } else if (type === 2) {
+        toastr.warning(msg);
+    } else {
+        toastr.error(msg);
+    }
 }

@@ -46,10 +46,9 @@ function usersTable() {
                 tbl += '<td>' + ++index + '</td>';
                 tbl += '<td>' + row.first_name + '</td>';
                 tbl += '<td>' + row.user_name + '</td>';
-                tbl += '<td>' + row.nic + '</td>';
+                tbl += '<td>' + row.email + '</td>';
                 let joinDate = new Date(row.created_at);
                 tbl += '<td>' + joinDate.toISOString().split('T')[0] + '</td>';
-                tbl += '<td>' + row.email + '</td>';
                 tbl += '<td><button type="button" value="' + row.id + '" class="btn btn-block btn-success reqActionBtn btn-sm"><i value="' + row.id + '" class="fa fa-edit"></i></button></td>';
                 tbl += '</tr>';
             });
@@ -85,10 +84,34 @@ function removeUserAPI(id, callBack) {
     });
 }
 
-function formDataSet() {
-
+function resetClientSideData() {
+//Reset all forms ex by clientside
 }
 
 function resetClientSideData() {
-//Reset all forms ex by clientside
+    $("#username").val('');
+    $("#initials").val('');
+    $("#first_Name").val('');
+    $("#last_Name").val('');
+    $("#surname").val('');
+    $("#nic").val('');
+    $("#dateOfBirth").val('');
+//                $("#gender").val('');
+//                $("#title").val('');
+    $("#religion").val('');
+    $("#nationality").val('');
+    $("#race").val('');
+    $("#email").val('');
+    $("#mobile").val('');
+    $("#land_Line").val('');
+//                $("#status").val('');
+    $("#password").val('');
+//                $("#civil_Status").val('');
+    $('#saveBtn').val('');
+    $('#removeBtn').val('');
+    $('#updateBtn').val('');
+    $('#saveBtn').removeClass('hidden');
+    $('#removeBtn').addClass('hidden');
+    $('#updateBtn').addClass('hidden');
+    $('#removeEmpBtn').addClass('hidden');
 }

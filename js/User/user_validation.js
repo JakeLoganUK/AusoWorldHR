@@ -14,10 +14,30 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
         toastr.error('NIC Required!');
         response = false;
     }
-    if (action == 1) {
+    if (action === 1) { //Actions only in Save
         if (frm_data.password.length == 0) {
             toastr.error('Password Required!');
             response = false;
+        }
+        if (frm_data.password.length < 8) {
+            toastr.error('Minimum 8 Characters Required For Password!');
+            response = false;
+        }
+        if (frm_data.user_name) {
+            uniqueUserFieldHandler(frm_data.user_name, 1, function (detect) {
+                if (detect.length != 0 && detect != null) {
+                    show_message(3, 'Username Alrady Taken By Another User!!');
+                    response = false;
+                }
+            });
+        }
+        if (frm_data.nic) {
+            uniqueUserFieldHandler(frm_data.nic, 2, function (detect) {
+                if (detect.length != 0 && detect != null) {
+                    show_message(3, 'NOTE: This NIC Alrady Taken By Another User!!');
+                    response = false;
+                }
+            });
         }
     }
     if (frm_data.user_name.length == 0) {
@@ -40,4 +60,39 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
         }
     });
     return response;
+}
+
+//function checkIfNicUnique(nic, callBack) {
+//    ajaxRequest('GET', base_path + "api/1.0.0/user/nic/" + nic, null, function (dataSet) {
+//        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+//            callBack(dataSet);
+//        }
+//    });
+//}
+//
+//function checkIfUsernameUnique(uName, callBack) {
+//    ajaxRequest('GET', base_path + "api/1.0.0/user/user_name/" + uName, null, function (dataSet) {
+//        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+//            callBack(dataSet);
+//        }
+//    });
+//}
+
+
+function uniqueUserFieldHandler(data, field, callBack) {
+    let user_field = '';
+    if (data) {
+        if (field === 1) {// Username 1
+            user_field = 'user_name/' + data;
+        } else if (field === 2) {//Nic 2
+            user_field = 'nic/' + data;
+        }
+    } else {
+        return false;
+    }
+    ajaxRequest('GET', base_path + "api/1.0.0/user/" + user_field, null, function (dataSet) {
+        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+            callBack(dataSet);
+        }
+    });
 }
