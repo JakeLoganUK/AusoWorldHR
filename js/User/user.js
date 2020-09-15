@@ -85,10 +85,34 @@ function removeUserAPI(id, callBack) {
     });
 }
 
-function formDataSet() {
-
+function resetClientSideData() {
+//Reset all forms ex by clientside
 }
 
 function resetClientSideData() {
-//Reset all forms ex by clientside
+    $("#username").val('');
+    $("#initials").val('');
+    $("#first_Name").val('');
+    $("#last_Name").val('');
+    $("#surname").val('');
+    $("#nic").val('');
+    $("#dateOfBirth").val('');
+//                $("#gender").val('');
+//                $("#title").val('');
+    $("#religion").val('');
+    $("#nationality").val('');
+    $("#race").val('');
+    $("#email").val('');
+    $("#mobile").val('');
+    $("#land_Line").val('');
+//                $("#status").val('');
+    $("#password").val('');
+//                $("#civil_Status").val('');
+    $('#saveBtn').val('');
+    $('#removeBtn').val('');
+    $('#updateBtn').val('');
+    $('#saveBtn').removeClass('hidden');
+    $('#removeBtn').addClass('hidden');
+    $('#updateBtn').addClass('hidden');
+    $('#removeEmpBtn').addClass('hidden');
 }
