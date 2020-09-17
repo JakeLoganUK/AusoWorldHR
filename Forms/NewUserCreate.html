@@ -970,11 +970,15 @@
                     }
                 });
                 $("#nic").change(function () {
-                    uniqueUserFieldHandler($(this).val(), 2, function (detect) {
-                        if (detect.length != 0 && detect != null) {
-                            show_message(3, 'This NIC Alrady Taken By Another User!!');
-                        }
-                    });
+                    if ($(this).val().length < 10) {
+                        show_message(3, 'Invalid NIC! Enter Correct NIC.');
+                    } else {
+                        uniqueUserFieldHandler($(this).val(), 2, function (detect) {
+                            if (detect.length != 0 && detect != null) {
+                                show_message(3, 'This NIC Alrady Taken By Another User!!');
+                            }
+                        });
+                    }
                 });
             });
 
