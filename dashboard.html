@@ -294,11 +294,11 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="info-box">
-                                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                                <span class="info-box-icon bg-aqua"><i class="ion ion-icecream"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Summary</span>
-                                    <span class="info-box-number">90<small>%</small></span>
+                                    <span class="info-box-text">Today Birthdays</span>
+                                    <span class="info-box-number">2<small></small></span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -352,16 +352,28 @@
                             <!-- Custom Tabs -->
                             <div class="nav-tabs-custom">
                                 <ul class="nav nav-tabs">
-                                    <li class=""><a href="#tab_1" data-toggle="tab" aria-expanded="false">Leave Approvals</a></li>
-                                    <li class="active"><a href="#tab_2" data-toggle="tab" aria-expanded="true">Profile Update Approvals</a></li>
-                                    <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Rejected Leaves</a></li>
+                                    <li class=""><a href="#tab_1" data-toggle="tab" aria-expanded="false">Leave Approvals <span class="label label-success">2</span></a></li>
+                                    <li class="active"><a href="#tab_2" data-toggle="tab" aria-expanded="true">Profile Updates <span class="label label-primary">0</span></a></li>
+                                    <!--<li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Rejected Leaves</a></li>-->
                                     <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane" id="tab_1">
-                                        <b>How to use:</b>
-
-                                        <p>Upcoming Features...</p>
+                                        <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                                            <thead>
+                                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Employee Name</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Leave Type</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Remark</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr role="row" class="odd">
+                                                    <td class="sorting_1">Amila</td>
+                                                    <td>Medical</td>
+                                                    <td>No Reason Provided</td>
+                                                </tr><tr role="row" class="even">
+                                                    <td class="sorting_1">Nadun</td>
+                                                    <td>Casual</td>
+                                                    <td>Some Reasons Explained</td>
+                                                </tr></tbody>
+                                        </table>
                                     </div>
                                     <!-- /.tab-pane -->
                                     <div class="tab-pane active" id="tab_2">
@@ -382,7 +394,7 @@
                             <!-- USERS LIST -->
                             <div class="box box-danger">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Todays Birthdays</h3>
+                                    <h3 class="box-title">Today Leaves</h3>
 
                                     <div class="box-tools pull-right">
                                         <span class="label label-danger">Today</span>
@@ -398,22 +410,22 @@
                                         <li>
                                             <img src="dist/img/user1-128x128.jpg" alt="User Image">
                                             <a class="users-list-name" href="#">Alexander Pierce</a>
-                                            <span class="users-list-date">Today</span>
+                                            <span class="users-list-date">Casual</span>
                                         </li>
                                         <li>
                                             <img src="dist/img/user7-128x128.jpg" alt="User Image">
                                             <a class="users-list-name" href="#">Jane</a>
-                                            <span class="users-list-date">12 Jan</span>
+                                            <span class="users-list-date">Medical</span>
                                         </li>
                                         <li>
                                             <img src="dist/img/user4-128x128.jpg" alt="User Image">
                                             <a class="users-list-name" href="#">Nora</a>
-                                            <span class="users-list-date">15 Jan</span>
+                                            <span class="users-list-date">Medical</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user3-128x128.jpg" alt="User Image">
+                                            <img src="dist/img/user2-160x160.jpg" alt="User Image">
                                             <a class="users-list-name" href="#">Nadia</a>
-                                            <span class="users-list-date">15 Jan</span>
+                                            <span class="users-list-date">Anual</span>
                                         </li>
                                     </ul>
                                     <!-- /.users-list -->
