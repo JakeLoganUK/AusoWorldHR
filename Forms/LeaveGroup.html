@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CopreusHR | Apply Leave</title>
+        <title>CopreusHR | Leave Groups</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
@@ -210,7 +210,7 @@
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="treeview">
+                        <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-pie-chart"></i>
                                 <span>Configuration</span>
@@ -218,12 +218,12 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../Forms/LeaveTypes.html"><i class="fa fa-circle-o"></i> Leave Type</a></li>
-                                <li><a href="../Forms/LeaveGroup.html"><i class="fa fa-circle-o"></i> Leave Group</a></li>
+                                <li><a href="LeaveTypes.html"><i class="fa fa-circle-o"></i> Leave Type</a></li>
+                                <li><a href="LeaveGroup.html"><i class="fa fa-circle-o"></i> Leave Group</a></li>
                                 <li><a href=""><i class="fa fa-circle-o"></i> Update</a></li>
                             </ul>
                         </li>
-                        <li class="treeview active">
+                        <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-edit"></i>
                                 <span>Apply Leave</span>
@@ -231,7 +231,7 @@
                                 <span class="fa fa-angle-left pull-right"></span>
                             </a>
                             <ul class="treeview-menu">
-                                <li  class="active"><a href="Forms/ApplyForLeave.html"><i class="fa fa-circle-o"></i> Apply For Leave</a></li>
+                                <li  class="active"><a href="ApplyForLeave.html"><i class="fa fa-circle-o"></i> Apply For Leave</a></li>
                             </ul>
                         </li>
                         <!--                        <li class="treeview">
@@ -296,8 +296,8 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Apply Leave
-                        <small>Apply leave form here</small>
+                        Leave Groups
+                        <small>Create New Leave Groups</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -312,7 +312,7 @@
                             <!-- AREA CHART -->
                             <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Setup Leave</h3>
+                                    <h3 class="box-title">Leave Group</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -323,134 +323,52 @@
                                     <!-- form start -->
                                     <form class="form-horizontal">
                                         <div class="box-body"> 
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Leave Type</label>
+                                            <div class="form-group cuteReq" id="leave_type"> 
+                                                <label for="remark" class="col-sm-3 control-label">Leave Group*</label>
                                                 <div class="col-sm-9"> 
-                                                    <select id="assignUser" class="form-control">
-                                                        <option value="01">Type 1</option>
-                                                        <option value="02">Type 2</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group cuteReq" id="DateOfBirth"> 
-                                                <label for="DateOfBirth" class="col-sm-3 control-label">From*</label>
-                                                <div class="col-sm-9"> 
-                                                    <input type="date" class="form-control cuteReq pull-right" id="leaveFrom">
-                                                </div>  
-                                            </div>
-                                            <div class="form-group cuteReq" id="DateOfBirth"> 
-                                                <label for="DateOfBirth" class="col-sm-3 control-label">To*</label>
-                                                <div class="col-sm-9"> 
-                                                    <input type="date" class="form-control cuteReq pull-right" id="leaveTo">
-                                                </div>  
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Assign User</label>
-                                                <div class="col-sm-9"> 
-                                                    <select id="assignUser" class="form-control">
-                                                        <option value="01">User 1</option>
-                                                        <option value="02">User 2</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group cuteReq" id="NIC"> 
-                                                <label for="remark" class="col-sm-3 control-label">Comment*</label>
-                                                <div class="col-sm-9"> 
-                                                    <textarea maxlength="92" class="form-control cuteReq onlyZupNum" id="comment" placeholder="Enter Text.."></textarea>
+                                                    <input type="text" maxlength="40" class="form-control cuteReq onlyZupNum" id="leave_group" placeholder="Enter Text..">
                                                 </div>  
                                             </div>
                                         </div>
                                         <!-- /.box-body -->
                                         <div class="box-footer"> 
-
+                                            <a href="javascript:resetClientSideData();" class="btn btn-default">Cancel</a>
+                                            <button type="submit" id="saveBtn" class="btn btn-info pull-right basic_Save">Create</button>
+                                            <button  id="updateBtn" class="btn btn-warning hidden">Update</button>
+                                            <button  id="removeBtn" class="btn btn-danger pull-right hidden">Remove</button>
                                         </div>
                                         <!-- /.box-footer -->
                                     </form>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
-
-                            <!-- Default box -->
-                            <div class="box">
-
+                        </div><!-- /.col (LEFT) -->
+                        <div class="col-md-6">
+                            <!-- BAR CHART -->
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">List Of Leave Groups</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
                                 <div class="box-body">
-                                    <a href="javascript:resetClientSideData();" class="btn btn-default">Cancel</a>
-                                    <button type="submit" id="saveBtn" class="btn btn-info pull-right basic_Save">Apply</button>
-                                    <button  id="updateBtn" class="btn btn-warning hidden">Update</button>
-                                    <button  id="removeBtn" class="btn btn-danger pull-right hidden">Remove</button>
+                                    <table id="userList" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:40px">#</th>
+                                                <th>First Name</th>
+                                                <th>Designation</th>
+                                                <th>Email</th>
+                                                <th>Join Date</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
 
-                        </div><!-- /.col (LEFT) -->
-                        <div class="col-md-6">
-                            <div class="box box-info">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Leave Summary</h3>
-
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <!-- /.box-header -->
-                                <div class="box-body">
-                                    <div class="table-responsive">
-                                        <table class="table no-margin">
-                                            <thead>
-                                                <tr>
-                                                    <th>Leave ID</th>
-                                                    <th>Remark</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><a href="#">OR9842</a></td>
-                                                    <td>Employeer Remarks Here</td>
-                                                    <td><span class="label label-success">Approved</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">OR1848</a></td>
-                                                    <td>Employeer Remarks Here</td>
-                                                    <td><span class="label label-warning">Pending</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">OR7429</a></td>
-                                                    <td>Employeer Remarks Here</td>
-                                                    <td><span class="label label-danger">Rejected</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">OR7429</a></td>
-                                                    <td>Employeer Remarks Here</td>
-                                                    <td><span class="label label-info">Processing</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">OR1848</a></td>
-                                                    <td>Employeer Remarks Here</td>
-                                                    <td><span class="label label-warning">Pending</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">OR7429</a></td>
-                                                    <td>No Reason - Employeer Remarks Here</td>
-                                                    <td><span class="label label-danger">Rejected</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="#">OR9842</a></td>
-                                                    <td>Sick - Employeer Remarks Here</td>
-                                                    <td><span class="label label-success">Approved</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- /.table-responsive -->
-                                </div>
-                                <!-- /.box-body -->
-                                <div class="box-footer clearfix">
-                                    <!--<a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">User Status</a>-->
-                                    <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Leaves</a>
-                                </div>
-                                <!-- /.box-footer -->
-                            </div>
                         </div>
                     </div><!-- /.row -->
 
