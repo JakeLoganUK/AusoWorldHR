@@ -52,7 +52,7 @@ function usersTable() {
                 } else {
                     tbl += '<td>-</td>';
                 }
-                tbl += '<td><button type="button" value="' + row.id + '" class="btn btn-block btn-success reqActionBtn btn-sm"><i value="' + row.id + '" class="fa fa-edit"></i></button></td>';
+                tbl += '<td><button type="button" value="' + row.id + '" class="btn btn-block btn-dark reqActionBtn btn-sm"><i value="' + row.id + '" class="fa fa-edit"></i></button></td>';
                 tbl += '</tr>';
             });
         }
