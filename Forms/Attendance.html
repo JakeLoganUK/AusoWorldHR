@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CopreusHR | Leave Groups</title>
+        <title>CopreusHR | Attendance</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
@@ -296,8 +296,8 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Leave Groups
-                        <small>Create New Leave Groups</small>
+                        Attendance
+                        <small>Mark New Attendance</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -312,7 +312,7 @@
                             <!-- AREA CHART -->
                             <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Leave Group</h3>
+                                    <h3 class="box-title">Attendance</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -321,62 +321,91 @@
                                 <div class="box-body" style="display: block;">
 
                                     <!-- form start -->
-                                    <div class="form-horizontal">
+                                    <form class="form-horizontal">
                                         <div class="box-body"> 
+                                            <!--                                            <div class="form-group cuteReq"> 
+                                                                                            <label class="col-sm-3 control-label">Account Number*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="number" maxlength="40" class="form-control cuteReq onlyZupNum" id="ac_no">
+                                                                                            </div>  
+                                                                                        </div>-->
                                             <div class="form-group cuteReq"> 
-                                                <label for="remark" class="col-sm-3 control-label">Name*</label>
+                                                <label class="col-sm-3 control-label">Excel File*</label>
                                                 <div class="col-sm-9"> 
-                                                    <input type="text" maxlength="40" class="form-control cuteReq onlyZupNum" id="leave_group" placeholder="Enter Text..">
+                                                    <input type="file" class="form-control cuteReq" id="file-type">
                                                 </div>  
                                             </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Leave Type</label>
-                                                <div class="col-md-9"> 
-                                                    <div class="col-md-9">
-                                                        <select id="leave_type" class="form-control">
-                                                            <option value="null">---</option>
-                                                        </select>    
-                                                    </div>
-                                                    <button id="btnSetleaveType" class="btn btn-success">Add</button>
-                                                </div>
-                                            </div>
-                                            <table class="table table-bordered table-striped" id="tblLeaveTypeSetup">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width: 10px">#</th>
-                                                        <th>Leave Type</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
+                                            <!--                                            <div class="form-group cuteReq" id="leave_type"> 
+                                                                                            <label class="col-sm-3 control-label">Date*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="date" maxlength="40" class="form-control cuteReq" id="date" >
+                                                                                            </div>  
+                                                                                        </div>
+                                                                                        <div class="form-group cuteReq" id="leave_type"> 
+                                                                                            <label class="col-sm-3 control-label">Time Table*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="text" maxlength="40" class="form-control cuteReq" id="timetable" >
+                                                                                            </div>  
+                                                                                        </div>
+                                                                                        <div class="form-group cuteReq" id="leave_type"> 
+                                                                                            <label class="col-sm-3 control-label">On Duty*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="time" class="form-control cuteReq" id="on_duty" >
+                                                                                            </div>  
+                                                                                        </div>
+                                                                                        <div class="form-group cuteReq" id="leave_type"> 
+                                                                                            <label class="col-sm-3 control-label">On Duty*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="time" class="form-control cuteReq" id="on_duty" >
+                                                                                            </div>  
+                                                                                        </div>
+                                                                                        <div class="form-group cuteReq" id="leave_type"> 
+                                                                                            <label class="col-sm-3 control-label">Off Duty*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="time" class="form-control cuteReq" id="off_duty" >
+                                                                                            </div>  
+                                                                                        </div>
+                                                                                        <div class="form-group cuteReq" id="leave_type"> 
+                                                                                            <label class="col-sm-3 control-label">Clock In*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="time" class="form-control cuteReq" id="clock_in" >
+                                                                                            </div>  
+                                                                                        </div>
+                                                                                        <div class="form-group cuteReq" id="leave_type"> 
+                                                                                            <label class="col-sm-3 control-label">Clock Out*</label>
+                                                                                            <div class="col-sm-9"> 
+                                                                                                <input type="time" class="form-control cuteReq" id="clock_out" >
+                                                                                            </div>  
+                                                                                        </div>-->
                                         </div>
-                                    </div>
+                                    </form>
                                     <div class="box-footer"> 
-                                        <a href="javascript:resetLGClientSideData();" class="btn btn-default">Cancel</a>
+                                        <a href="javascript:resetAttendClientSideData();" class="btn btn-default">Cancel</a>
                                         <button  id="saveBtn" class="btn btn-info pull-right basic_Save">Create</button>
                                         <button  id="updateBtn" class="btn btn-warning hidden">Update</button>
                                         <button  id="removeBtn" class="btn btn-danger pull-right hidden">Remove</button>
                                     </div>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
+
+
                         </div><!-- /.col (LEFT) -->
                         <div class="col-md-6">
                             <!-- BAR CHART -->
                             <div class="box box-success">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">List Of Leave Groups</h3>
+                                    <h3 class="box-title">List Of Leave Types</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
                                 </div>
                                 <div class="box-body">
-                                    <table id="leaveGroupList" class="table table-bordered table-striped">
+                                    <table id="leaveTypeList" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th style="width:40px">#</th>
-                                                <th>Name</th>
+                                                <th>Leave Type</th>
+                                                <th>No Of Days</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -397,7 +426,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 1.0.0
                 </div>
-                <strong>Copyright &copy; 2020 - 50 Years  <a href="http://www.ausoworld.com/">Auso World</a>.</strong> All rights reserved.
+                <strong>Copyright &copy; 2020 - 50 Years  <a href="http://www.ausoworld.com/">Copreus</a>.</strong> All rights reserved.
             </footer>
 
             <!-- Add the sidebar's background. This div must be placed
@@ -422,104 +451,69 @@
         <script src="../dist/js/demo.js"></script>
         <script src="../js/check_login.js" type="text/javascript"></script>
         <script src="../js/funtions.js" type="text/javascript"></script>
-        <script src="../js/LeaveGroups/leave_group_dataset.js" type="text/javascript"></script>
         <script src="../js/Functions/common_validations.js" type="text/javascript"></script>
         <script src="../dist/js/toastr.min.js" type="text/javascript"></script>
-        <script src="../js/LeaveTypes/leave_type_method.js" type="text/javascript"></script>
+        <script src="../js/Attendance/attendance_dataset.js" type="text/javascript"></script>
+        <script src="../js/Attendance/attendance_type_method.js" type="text/javascript"></script>
         <!-- page script -->
         <script>
-            var ITEM_LIST = [];
             var USER_ID = '';
             $(function () {
-                leaveTypesCombo();
-                getLeaveGroupTableUI();
-
-                $('#btnSetleaveType').click(function () {
-                    add_itemToBill();
-                });
-                function add_itemToBill() {
-                    let leave_id = parseInt($('#leave_type').val());
-                    let leave_name = $('#leave_type :selected').html();
-                    if (isValueExsist(leave_id)) {
-                        alert('"' + leave_name + '" already added !');
-                        return false;
-                    }
-                    if (isNaN(leave_id)) {
-                        alert("invalid Application Type!");
-                        return false;
-                    }
-                    ITEM_LIST.push({id: leave_id, leave_type: leave_name});
-                    selectedApplication_table(ITEM_LIST);
-                }
-                function isValueExsist(value) {
-                    let ret = false;
-                    $.map(ITEM_LIST, function (val) {
-                        if (val.id == value) {
-                            ret = true;
-                        }
-                    });
-                    return ret;
-                }
-                //Member remove button action 
-                $(document).on('click', '.app_removeBtn', function () {
-                    remove_itemFrom_bill($(this).val());
-                });
-                function remove_itemFrom_bill(rem_val) {
-// get index of object with id:37
-                    var removeIndex = ITEM_LIST.map(function (item) {
-                        return item.id;
-                    }).indexOf(rem_val);
-// remove object
-                    ITEM_LIST.splice(removeIndex, 1);
-                    selectedApplication_table(ITEM_LIST);
-                }
-
+                getLeaveTypeTableUI(); //<-Load Table
                 //Save
                 $('#saveBtn').click(function () {
                     var data = formLeaveData();
-                    if (leaveGroupRequiredFieldHandler(data, 1, ".cuteReq")) {
-                        methodLeaveGroupSYS(data, 1, null, function (resp) {
+                    if (leaveTypeRequiredFieldHandler(data, 1, ".cuteReq")) {
+                        methodLeaveTypeSYS(data, 1, null, function (resp) {
                             if (resp.id === 1) {
-                                getLeaveGroupTableUI();
-                                resetLGClientSideData();
+                                getLeaveTypeTableUI();
+                                resetLTClientSideData();
                             }
-                            show_result_alert(resp, 'Leave Group Created');
+                            show_result_alert(resp, 'Leave Type Created');
                         });
                     }
                 });
 //Table Action Button
                 $(document).on('click', '.reqActionBtn', function () {
                     let currentBtn = $(this).val();
-                    leaveGroupAttributeHandler(currentBtn, 1, function (set) {
-                        $("#leave_group").val(set[0].name);
-//                        $("#no_of_days").val(set[0].no_of_days);
+                    leaveTypeAttributeHandler(currentBtn, 1, function (set) {
+                        $("#leave_type").val(set[0].leave_type);
+                        $("#no_of_days").val(set[0].no_of_days);
                         setOtherButtonValue(currentBtn);
                         setupBtnEnv();
                     });
                 });
                 //Update
                 $('#updateBtn').click(function () {
-//                    let currentBtn = $(this).val();
-//                    var data = formLeaveData();
-                    show_message(2,'Not Allowd To Update.Please Remove And Add New Group!');
+                    let currentBtn = $(this).val();
+                    var data = formLeaveData();
+                    if (leaveTypeRequiredFieldHandler(data, 2, ".cuteReq")) {
+                        methodLeaveTypeSYS(data, 2, currentBtn, function (resp) {
+                            if (resp.id === 1) {
+                                getLeaveTypeTableUI();
+                                resetLTClientSideData();
+                            }
+                            show_result_alert(resp, 'Leave Type Updated');
+                        });
+                    }
                 });
                 //Remove
                 $('#removeBtn').click(function () {
                     let currentBtn = $(this).val();
-                    methodLeaveGroupSYS(null, 3, currentBtn, function (resp) {
+                    methodLeaveTypeSYS(null, 3, currentBtn, function (resp) {
                         if (resp.id === 1) {
-                            getLeaveGroupTableUI();
-                            resetLGClientSideData();
+                            getLeaveTypeTableUI();
+                            resetLTClientSideData();
                         }
-                        show_result_alert(resp, 'Leave Group Removed');
+                        show_result_alert(resp, 'Leave Type Removed');
                     });
                 });
+
             });
         </script>
 
         <script>
             $(document).ready(function () {
-
             });
 
         </script>

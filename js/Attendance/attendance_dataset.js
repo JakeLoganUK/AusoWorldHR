@@ -1,7 +1,7 @@
-function getLeaveTypeTableUI(callBack) {
+function getAttendanceTableUI(callBack) {
     var table = "";
     var id = 1;
-    methodLeaveTypeSYS(null, 4, null, function (dataSet) {
+    methodAttendanceSYS(null, 4, null, function (dataSet) {
         if (dataSet) {
             $.each(dataSet, function (index, set) {
                 table += "<tr>";
@@ -21,7 +21,7 @@ function getLeaveTypeTableUI(callBack) {
     });
 }
 
-function leaveTypeAttributeHandler(data, type, callBack) {
+function attendanceAttributeHandler(data, type, callBack) {
     let attribute = '';
     if (data) {
         if (type === 1) {// Type by ID = 1
@@ -73,13 +73,12 @@ function leaveTypeRequiredFieldHandler(frm_data, action, required_class) {
 //Get Page DataSets
 function formLeaveData() {
     var data = {
-        "leave_type": $("#leave_type").val(),
-        "no_of_days": $("#no_of_days").val()
+        "file": $("#leave_type").val()
     };
     return data;
 }
 
-function resetLTClientSideData() {
+function resetAttendClientSideData() {
     $("#leave_type").val('');
     $("#no_of_days").val('');
     //Buttons
