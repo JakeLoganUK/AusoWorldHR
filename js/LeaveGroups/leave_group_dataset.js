@@ -6,16 +6,16 @@ function methodLeaveGroupSYS(data, method, id, callBack) {
 
     if (method === 1) {
         DATA_METHOD = 'POST';
-        URL = '/api/leave_configs';
+        URL = base_path + 'api/1.0.0/leave_groups';
     } else if (method === 2) {
         DATA_METHOD = 'PUT';
-        URL = '/api/leave_configs/' + id;
+        URL = base_path + 'api/1.0.0/leave_groups/' + id;
     } else if (method === 3) {
         DATA_METHOD = 'DELETE';
-        URL = '/api/leave_configs/' + id;
+        URL = base_path + 'api/1.0.0/leave_groups/' + id;
     } else if (method === 4) {
         DATA_METHOD = 'GET';
-        URL = '/api/leave_configs/' + id;
+        URL = base_path + 'api/1.0.0/leave_groups';
     } else {
         return false;
     }
@@ -26,25 +26,131 @@ function methodLeaveGroupSYS(data, method, id, callBack) {
     });
 }
 
-function getCommitteeTableUI(callBack) {
-    var table = "";
-    var id = 1;
-    ajaxRequest('GET', "/api/committees", null, function (dataSet) {
+function leaveTypesCombo(callBack) {
+    var cbo = "";
+    methodLeaveTypeSYS(null, 4, null, function (dataSet) {
         if (dataSet) {
-            $.each(dataSet, function (index, committee) {
-                table += "<tr>";
-                table += "<td>" + id++ + "</td>";
-                table += "<td>" + committee.name + "</td>";
-                table += "<td>" + committee.schedule_date + "</td>";
-                table += '<td><a href="/committee_remarks/id/' + committee.id + '" type="button" target="_blank" class="btn btn-dark btn-xs"> Comment </a></td>';
-                table += "<td><button id='" + committee.id + "' value='" + committee.id + "' type='button' class='btn btn-block btn-success btn-xs btnAction'>Select</button></td>";
-                table += "</tr>";
+            $.each(dataSet, function (index, set) {
+                cbo += '<option value="' + set.id + '">' + set.leave_type + '</option>';
             });
         } else {
-            table = "<option value=''>No Data Found</option>";
+            cbo = "<option value=''>No Data Found</option>";
         }
-        $('#tblCommittees tbody').html(table);
+        $('#leave_type').html(cbo);
         if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
             callBack();
         }
     });
+}
+
+function selectedApplication_table(obj, callBack) {
+    var tbl = "";
+    if (obj.length == 0) {
+        tbl = "<tr><td colspan='3'>No Data Found</td></tr>";
+    } else {
+        $.each(obj, function (index, row) {
+            tbl += '<tr>';
+            tbl += '<td>' + ++index + '</td>';
+            tbl += '<td>' + row.leave_type + '</td>';
+            tbl += '<td><button value="' + row.id + '" type="button" class="btn btn-danger app_removeBtn">Remove</button></td>';
+            tbl += '</tr>';
+        });
+    }
+    $('#tblLeaveTypeSetup tbody').html(tbl);
+    if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+        callBack();
+    }
+}
+
+function getLeaveGroupTableUI(callBack) {
+    var table = "";
+    var id = 1;
+    methodLeaveGroupSYS(null, 4, null, function (dataSet) {
+        if (dataSet) {
+            $.each(dataSet, function (index, set) {
+                table += "<tr>";
+                table += "<td>" + id++ + "</td>";
+                table += "<td>" + set.name + "</td>";
+                table += "<td><button value='" + set.id + "' type='button' class='btn btn-block btn-success btn-xs reqActionBtn'>Select</button></td>";
+                table += "</tr>";
+            });
+        } else {
+            table = "<td value=''>No Data Found</td>";
+        }
+        $('#leaveGroupList tbody').html(table);
+        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+            callBack();
+        }
+    });
+}
+
+function leaveGroupAttributeHandler(data, type, callBack) {
+    let attribute = '';
+    if (data) {
+        if (type === 1) {// Type by ID = 1
+            attribute = 'id';
+        } else if (type === 2) {//Nic 2
+            attribute = 'leave_groups';
+        }
+    } else {
+        return false;
+    }
+    ajaxRequest('GET', base_path + "api/1.0.0/leave_groups/" + attribute + "/" + data, null, function (dataSet) {
+        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+            callBack(dataSet);
+        }
+    });
+}
+
+function setOtherButtonValue(e) {
+    $("#updateBtn").val(e);
+    $("#removeBtn").val(e);
+}
+
+//Required Field
+//Current Action = save/1 , update/2
+function leaveGroupRequiredFieldHandler(frm_data, action, required_class) {
+    var response = true;
+    if (frm_data.leave_types.length == 0) {
+        toastr.error('Please Add Leave Types Before Create Group!');
+        response = false;
+    }
+    if (frm_data.name.length == 0) {
+        toastr.error('Group Type Name Required!');
+        response = false;
+    }
+    if (action === 1) { //Actions only in Save
+
+    }
+    $(required_class).each(function () {
+        if ($(this).val().length === 0) {
+//            $(this).addClass("has-error");
+        } else {
+//            $(this).removeClass("has-error");
+        }
+    });
+    return response;
+}
+
+//Get Page DataSets
+function formLeaveData() {
+    var nameArray = ITEM_LIST.map(function (el) {
+        return el.id;
+    });
+    var data = {
+        "name": $("#leave_group").val(),
+        "leave_types": nameArray
+    };
+    return data;
+}
+
+function resetLGClientSideData() {
+    $("#leave_group").val('');
+    //Buttons
+    $("#saveBtn").val('');
+    $("#updateBtn").val('');
+    $("#removeBtn").val('');
+    $("#updateBtn").addClass('hidden');
+    $("#removeBtn").addClass('hidden');
+    $('#saveBtn').removeClass('hidden');
+}

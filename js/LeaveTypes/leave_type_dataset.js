@@ -1,31 +1,3 @@
-//Method API
-function methodLeaveTypeSYS(data, method, id, callBack) {
-    //Current Usage Explained - POST/1 , PUT/2 , DELETE/3 , GET/4
-    let DATA_METHOD = '';
-    let URL = '';
-
-    if (method === 1) {
-        DATA_METHOD = 'POST';
-        URL = base_path + 'api/1.0.0/leave_configs';
-    } else if (method === 2) {
-        DATA_METHOD = 'PUT';
-        URL = base_path + 'api/1.0.0/leave_configs/' + id;
-    } else if (method === 3) {
-        DATA_METHOD = 'DELETE';
-        URL = base_path + 'api/1.0.0/leave_configs/' + id;
-    } else if (method === 4) {
-        DATA_METHOD = 'GET';
-        URL = base_path + 'api/1.0.0/leave_configs';
-    } else {
-        return false;
-    }
-    ajaxRequest(DATA_METHOD, URL, data, function (dataSet) {
-        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
-            callBack(dataSet);
-        }
-    });
-}
-
 function getLeaveTypeTableUI(callBack) {
     var table = "";
     var id = 1;
@@ -72,6 +44,41 @@ function setOtherButtonValue(e) {
     $("#removeBtn").val(e);
 }
 
+
+//Required Field
+//Current Action = save/1 , update/2
+function leaveTypeRequiredFieldHandler(frm_data, action, required_class) {
+    var response = true;
+    if (frm_data.no_of_days.length == 0) {
+        toastr.error('No Of Days Required!');
+        response = false;
+    }
+    if (frm_data.leave_type.length == 0) {
+        toastr.error('Leave Type Required!');
+        response = false;
+    }
+    if (action === 1) { //Actions only in Save
+
+    }
+    $(required_class).each(function () {
+        if ($(this).val().length === 0) {
+//            $(this).addClass("has-error");
+        } else {
+//            $(this).removeClass("has-error");
+        }
+    });
+    return response;
+}
+
+//Get Page DataSets
+function formLeaveData() {
+    var data = {
+        "leave_type": $("#leave_type").val(),
+        "no_of_days": $("#no_of_days").val()
+    };
+    return data;
+}
+
 function resetLTClientSideData() {
     $("#leave_type").val('');
     $("#no_of_days").val('');
@@ -81,4 +88,5 @@ function resetLTClientSideData() {
     $("#removeBtn").val('');
     $("#updateBtn").addClass('hidden');
     $("#removeBtn").addClass('hidden');
+    $('#saveBtn').removeClass('hidden');
 }
