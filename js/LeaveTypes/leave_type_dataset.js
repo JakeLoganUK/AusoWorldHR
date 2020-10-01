@@ -8,7 +8,8 @@ function getLeaveTypeTableUI(callBack) {
                 table += "<td>" + id++ + "</td>";
                 table += "<td>" + set.leave_type + "</td>";
                 table += "<td>" + set.no_of_days + "</td>";
-                table += "<td><button value='" + set.id + "' type='button' class='btn btn-block btn-success btn-xs reqActionBtn'>Select</button></td>";
+//                table += "<td><button value='" + set.id + "' type='button' class='btn btn-block btn-success btn-xs reqActionBtn'>Select</button></td>";
+                table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn btn-sm'><i class='fa fa-edit'></i></button></td>";
                 table += "</tr>";
             });
         } else {
