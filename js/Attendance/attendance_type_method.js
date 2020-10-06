@@ -19,9 +19,9 @@ function methodAttendanceSYS(data, method, id, callBack) {
     } else {
         return false;
     }
-    ajaxRequest(DATA_METHOD, URL, data, function (dataSet) {
+    submitDataWithFile(URL, data, function (dataSet) {
         if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
             callBack(dataSet);
         }
-    });
+    }, DATA_METHOD);
 }

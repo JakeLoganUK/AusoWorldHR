@@ -26,13 +26,17 @@ function attendanceAttributeHandler(data, type, callBack) {
     if (data) {
         if (type === 1) {// Type by ID = 1
             attribute = 'id';
-        } else if (type === 2) {//Nic 2
-            attribute = 'leave_type';
+        } else if (type === 2) {//name 2
+            attribute = 'name';
+        } else if (type === 3) {
+            attribute = 'date';
+        } else if (type === 4) {
+            attribute = 'absent';
         }
     } else {
         return false;
     }
-    ajaxRequest('GET', base_path + "api/1.0.0/leave_configs/" + attribute + "/" + data, null, function (dataSet) {
+    ajaxRequest('GET', base_path + "api/1.0.0/attendance/" + attribute + "/" + data, null, function (dataSet) {
         if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
             callBack(dataSet);
         }
@@ -47,16 +51,12 @@ function setOtherButtonValue(e) {
 
 //Required Field
 //Current Action = save/1 , update/2
-function leaveTypeRequiredFieldHandler(frm_data, action, required_class) {
+function AttendanceRequiredFieldHandler(frm_data, action, required_class) {
     var response = true;
-    if (frm_data.no_of_days.length == 0) {
-        toastr.error('No Of Days Required!');
-        response = false;
-    }
-    if (frm_data.leave_type.length == 0) {
-        toastr.error('Leave Type Required!');
-        response = false;
-    }
+//    if (frm_data.no_of_days.length == 0) {
+//        toastr.error('No Of Days Required!');
+//        response = false;
+//    }
     if (action === 1) { //Actions only in Save
 
     }
@@ -71,9 +71,9 @@ function leaveTypeRequiredFieldHandler(frm_data, action, required_class) {
 }
 
 //Get Page DataSets
-function formLeaveData() {
+function formAttendData() {
     var data = {
-        "file": $("#leave_type").val()
+        file: $('#file-type')[0].files[0]
     };
     return data;
 }
