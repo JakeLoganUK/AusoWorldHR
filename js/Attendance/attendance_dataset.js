@@ -1,20 +1,41 @@
 function getAttendanceTableUI(callBack) {
     var table = "";
     var id = 1;
-    methodAttendanceSYS(null, 4, null, function (dataSet) {
+    methodAttendanceAJAX(null, 4, null, function (dataSet) {
         if (dataSet) {
             $.each(dataSet, function (index, set) {
                 table += "<tr>";
                 table += "<td>" + id++ + "</td>";
-                table += "<td>" + set.leave_type + "</td>";
-                table += "<td>" + set.no_of_days + "</td>";
-                table += "<td><button value='" + set.id + "' type='button' class='btn btn-block btn-success btn-xs reqActionBtn'>Select</button></td>";
+                table += "<td>" + set.name + "</td>";
+                table += "<td>" + set.date + "</td>";
+                table += "<td>" + set.time_table + "</td>";
+                table += "<td>" + set.on_duty + "</td>";
+                table += "<td>" + set.off_duty + "</td>";
+                table += "<td>" + set.clock_in + "</td>";
+                table += "<td>" + set.clock_out + "</td>";
+                table += "<td>" + set.late + "</td>";
+                table += "<td>" + set.early + "</td>";
+                if (set.absent == 0) {
+                    table += "<td><span class='label label-success'>Present</span></td>";
+                } else {
+                    table += "<td><span class='label label-danger'>Absent</span></td>";
+                }
+                table += "<td>" + set.ot_time + "</td>";
+                table += "<td>" + set.work_time + "</td>";
+                table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn btn-sm'><i class='fa fa-edit'></i></button></td>";
                 table += "</tr>";
             });
         } else {
             table = "<td value=''>No Data Found</td>";
         }
-        $('#leaveTypeList tbody').html(table);
+        $('#attandanceFullList tbody').html(table);
+//        $('#attandanceFullList').DataTable();
+        $('#attandanceFullList').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf'
+            ]
+        });
         if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
             callBack();
         }

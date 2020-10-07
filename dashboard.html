@@ -293,7 +293,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Today Birthdays</span>
-                                    <span class="info-box-number">2<small></small></span>
+                                    <span class="info-box-number show_today_birth">2<small></small></span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -306,7 +306,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Active Employees</span>
-                                    <span class="info-box-number">500</span>
+                                    <span class="info-box-number show_active_emp">500</span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -322,7 +322,7 @@
                                 <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Leave Employees</span>
-                                    <span class="info-box-number">10</span>
+                                    <span class="info-box-number show_leave_emp">0</span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -335,7 +335,7 @@
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">All Employees</span>
-                                    <span class="info-box-number">2,000</span>
+                                    <span class="info-box-number show_all_emp">2,000</span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -503,6 +503,15 @@
         <script src="dist/js/demo.js"></script>
         <script src="js/funtions.js" type="text/javascript"></script>
         <script src="js/check_login.js" type="text/javascript"></script>
-
+        <script src="js/Dashboard/users_in_dataset.js" type="text/javascript"></script>
+        <script>
+            $(function () {
+                //handle user views
+                getAllUsersAPI(function (rest) {
+                    $('.show_all_emp').text(rest.length);
+                    $('.show_active_emp').text(rest.length);
+                });
+            });
+        </script>
     </body>
 </html>
