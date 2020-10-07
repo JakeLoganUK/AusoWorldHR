@@ -27,7 +27,7 @@ function ulploadFile2(URL, formData, callBack, metod = false) {
     $.ajax({
         type: metod,
         headers: {
-            "Authorization": "Bearer " + $('meta[name=api-token]').attr("content"),
+            "Authorization": "Bearer " + localStorage.getItem('othKey'),
             "Accept": "application/json"
         },
         xhr: function () {
