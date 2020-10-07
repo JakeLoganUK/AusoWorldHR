@@ -102,6 +102,8 @@ function formAttendData() {
 function resetAttendClientSideData() {
     $("#leave_type").val('');
     $("#no_of_days").val('');
+    $('.exeFileLoad').removeClass('hidden');
+    $('.sectionUpdateAttandance').addClass('hidden');
     //Buttons
     $("#saveBtn").val('');
     $("#updateBtn").val('');
