@@ -74,10 +74,10 @@ function setOtherButtonValue(e) {
 //Current Action = save/1 , update/2
 function AttendanceRequiredFieldHandler(frm_data, action, required_class) {
     var response = true;
-//    if (frm_data.no_of_days.length == 0) {
-//        toastr.error('No Of Days Required!');
-//        response = false;
-//    }
+    if (frm_data.timetable.length == 0) {
+        toastr.error('Timetable Required!');
+        response = false;
+    }
     if (action === 1) { //Actions only in Save
 
     }
@@ -92,9 +92,27 @@ function AttendanceRequiredFieldHandler(frm_data, action, required_class) {
 }
 
 //Get Page DataSets
-function formAttendData() {
+function formAttendDataUpload() {
     var data = {
         file: $('#file-type')[0].files[0]
+    };
+    return data;
+}
+//Get Page DataSets
+function formAttendData() {
+    var data = {
+//        ac_no: $('#ac_no-type').val(),
+        name: $('#name').val(),
+        date: $('#date').val(),
+        timetable: $('#timetable').val(),
+        on_duty: $('#on_duty').val(),
+        clock_in: $('clock_in').val(),
+        clock_out: $('#clock_out').val(),
+        late: $('#late').val(),
+        early: $('#early').val(),
+        absent: $('#absent').val(),
+        ot_time: $('#ot_time').val(),
+        work_time: $('#work_time').val()
     };
     return data;
 }

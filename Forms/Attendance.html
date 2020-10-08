@@ -313,73 +313,73 @@
                                                 </div>  
                                             </div>
                                             <div class="sectionUpdateAttandance hidden">
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq" > 
+                                                    <label class="col-sm-3 control-label">Name*</label>
+                                                    <div class="col-sm-9"> 
+                                                        <input type="text" maxlength="40" class="form-control cuteReq" id="name" >
+                                                    </div>  
+                                                </div>
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">Date*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="date" maxlength="40" class="form-control cuteReq" id="date" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq" > 
                                                     <label class="col-sm-3 control-label">Time Table*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="text" maxlength="40" class="form-control cuteReq" id="timetable" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">On Duty*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="on_duty" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
-                                                    <label class="col-sm-3 control-label">On Duty*</label>
-                                                    <div class="col-sm-9"> 
-                                                        <input type="time" class="form-control cuteReq" id="on_duty" >
-                                                    </div>  
-                                                </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq" > 
                                                     <label class="col-sm-3 control-label">Off Duty*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="off_duty" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq" > 
                                                     <label class="col-sm-3 control-label">Clock In*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="clock_in" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">Clock Out*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="clock_out" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">Late*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="late" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">Early*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="early" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">Absent*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="text" class="form-control cuteReq" id="absent" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">OT Time*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="ot_time" >
                                                     </div>  
                                                 </div>
-                                                <div class="form-group cuteReq" id="leave_type"> 
+                                                <div class="form-group cuteReq"> 
                                                     <label class="col-sm-3 control-label">Work Time*</label>
                                                     <div class="col-sm-9"> 
                                                         <input type="time" class="form-control cuteReq" id="work_time" >
@@ -487,7 +487,7 @@
                 getAttendanceTableUI();
                 //Save
                 $('#saveBtn').click(function () {
-                    var data = formAttendData();
+                    var data = formAttendDataUpload();
                     if (AttendanceRequiredFieldHandler(data, 1, ".cuteReq")) {
                         methodAttendanceSYS(data, 1, null, function (resp) {
                             if (resp.id === 1) {
@@ -502,7 +502,7 @@
                 $(document).on('click', '.reqActionBtn', function () {
                     let currentBtn = $(this).val();
                     attendanceAttributeHandler(currentBtn, 1, function (set) {
-                        $( "#file-type,#date" ).focus();
+                        $("#file-type,#date").focus();
                         $('.exeFileLoad').addClass('hidden');
                         $("#name").val(set[0].name);
                         $("#date").val(set[0].date);
@@ -528,6 +528,7 @@
                     if (AttendanceRequiredFieldHandler(data, 2, ".cuteReq")) {
                         methodAttendanceAJAX(data, 2, currentBtn, function (resp) {
                             if (resp.id === 1) {
+                                location.reload();
                                 getAttendanceTableUI();
                                 resetAttendClientSideData();
                             }
@@ -540,6 +541,7 @@
                     let currentBtn = $(this).val();
                     methodAttendanceAJAX(null, 3, currentBtn, function (resp) {
                         if (resp.id === 1) {
+                            location.reload();
                             getAttendanceTableUI();
                             resetAttendClientSideData();
                         }
