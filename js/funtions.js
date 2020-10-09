@@ -1,4 +1,4 @@
-var debug_on = 0; //Debug Me 0/1
+var debug_on = 1; //Debug Me 0/1
 var base_path = 'https://www.qa.ceytechsystemsolutions.com/userManagement/public/'; //Enter Base API URL
 var base_url = 'file:///C:/xampp/htdocs/HRM/AusoWorldHR/'; //Please Enter Your Basic URL
 
