@@ -9,18 +9,18 @@ function getAttendanceTableUI(callBack) {
                 table += "<td>" + set.name + "</td>";
                 table += "<td>" + set.date + "</td>";
                 table += "<td>" + set.time_table + "</td>";
-                table += "<td>" + set.on_duty + "</td>";
-                table += "<td>" + set.off_duty + "</td>";
+//                table += "<td>" + set.on_duty + "</td>";
+//                table += "<td>" + set.off_duty + "</td>";
                 table += "<td>" + set.clock_in + "</td>";
                 table += "<td>" + set.clock_out + "</td>";
-                table += "<td>" + set.late + "</td>";
-                table += "<td>" + set.early + "</td>";
+//                table += "<td>" + set.late + "</td>";
+//                table += "<td>" + set.early + "</td>";
                 if (set.absent == 0) {
                     table += "<td><span class='label label-success'>Present</span></td>";
                 } else {
                     table += "<td><span class='label label-danger'>Absent</span></td>";
                 }
-                table += "<td>" + set.ot_time + "</td>";
+//                table += "<td>" + set.ot_time + "</td>";
                 table += "<td>" + set.work_time + "</td>";
                 table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn btn-sm'><i class='fa fa-edit'></i></button></td>";
                 table += "</tr>";
@@ -105,13 +105,13 @@ function formAttendData() {
         name: $('#name').val(),
         date: $('#date').val(),
         timetable: $('#timetable').val(),
-        on_duty: $('#on_duty').val(),
+//        on_duty: $('#on_duty').val(),
         clock_in: $('clock_in').val(),
         clock_out: $('#clock_out').val(),
-        late: $('#late').val(),
-        early: $('#early').val(),
+//        late: $('#late').val(),
+//        early: $('#early').val(),
         absent: $('#absent').val(),
-        ot_time: $('#ot_time').val(),
+//        ot_time: $('#ot_time').val(),
         work_time: $('#work_time').val()
     };
     return data;

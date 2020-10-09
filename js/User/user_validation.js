@@ -31,18 +31,26 @@ function userRequiredFieldHandler(frm_data, action, required_class) {
                 }
             });
         }
-        if (frm_data.nic) {
-            if (frm_data.nic.length < 10) {
-                show_message(3, 'Invalid NIC! Enter Correct NIC.');
-                response = false;
-            } else {
-                uniqueUserFieldHandler(frm_data.nic, 2, function (detect) {
-                    if (detect.length != 0 && detect != null) {
-                        show_message(3, 'NOTE: This NIC Alrady Taken By Another User!!');
-                        response = false;
-                    }
-                });
-            }
+    }
+    if (frm_data.nic) {
+        function validateNIC(NIC) {
+            var pattern = /^([0-9]{9}[x|X|v|V]|[0-9]{12})$/m;
+            return $.trim(NIC).match(pattern) ? true : false;
+        }
+        if (frm_data.nic.length < 10) {
+            show_message(3, 'Invalid NIC! Enter Correct NIC.');
+            response = false;
+        } else {
+            uniqueUserFieldHandler(frm_data.nic, 2, function (detect) {
+                if (detect.length != 0 && detect != null) {
+                    show_message(3, 'NOTE: This NIC Alrady Taken By Another User!!');
+                    response = false;
+                }
+            });
+        }
+        if (validateNIC(frm_data.nic) != true) {
+            response = false;
+            show_message(3, 'Invalid NIC! Enter Correct NIC - Error');
         }
     }
     if (frm_data.user_name.length == 0) {
