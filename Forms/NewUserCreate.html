@@ -220,7 +220,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="../Forms/LeaveTypes.html"><i class="fa fa-circle-o"></i> Leave Type</a></li>
                                 <li><a href="../Forms/LeaveGroup.html"><i class="fa fa-circle-o"></i> Leave Group</a></li>
-                                <li><a href=""><i class="fa fa-circle-o"></i> Update</a></li>
+                                <li><a href="../Forms/Tire.html"><i class="fa fa-circle-o"></i> Tires</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -310,8 +310,11 @@
                                                 <label class="col-sm-3 control-label cuteReq">User Role*</label>
                                                 <div class="col-sm-9"> 
                                                     <select id="user_role" class="form-control cuteReq">
-                                                        <option value="user">User</option>
-                                                        <option value="admin">Admin</option>
+                                                        <option value="0">User</option>
+                                                        <option value="1">Admin</option>
+                                                        <option value="2">Editor</option>
+                                                        <option value="3">HR</option>
+                                                        <option value="4">IT</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -779,11 +782,13 @@
             var USER_ID = '';
             $(function () {
                 usersTable(); //<-Load Table
+                getTiresAPI(); //<-Load Tires
                 $('.ifMarriedLb').html('Spouse');
                 //Save User
                 $("#saveBtn").click(function () {
                     var data = {
                         "user_name": $("#username").val(),
+                        "is_admin": $("#user_role").val(),
                         "initials": $("#initials").val(),
                         "first_name": $("#first_Name").val(),
                         "last_name": $("#last_Name").val(),
@@ -844,6 +849,7 @@
                     let currentBtn = $(this).val();
                     getUserByIdAPI(currentBtn, function (set) {
                         $("#username").val(set.user_name);
+                        $("#user_role").val(set.is_admin);
                         $("#initials").val(set.initials);
                         $("#first_Name").val(set.first_name);
                         $("#last_Name").val(set.last_name);
@@ -887,6 +893,7 @@
                 $("#updateBtn").click(function () {
                     var data = {
                         "user_name": $("#username").val(),
+                        "is_admin": $("#user_role").val(),
                         "initials": $("#initials").val(),
                         "first_name": $("#first_Name").val(),
                         "last_name": $("#last_Name").val(),

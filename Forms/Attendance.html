@@ -205,7 +205,7 @@
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="treeview">
+                        <li class="treeview nPaM">
                             <a href="#">
                                 <i class="fa fa-pie-chart"></i>
                                 <span>Configuration</span>
@@ -215,7 +215,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="LeaveTypes.html"><i class="fa fa-circle-o"></i> Leave Type</a></li>
                                 <li><a href="LeaveGroup.html"><i class="fa fa-circle-o"></i> Leave Group</a></li>
-                                <li><a href=""><i class="fa fa-circle-o"></i> Update</a></li>
+                                <li><a href="../Forms/Tire.html"><i class="fa fa-circle-o"></i> Tires</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -239,7 +239,7 @@
                                 <li><a href="Attendance.html"><i class="fa fa-circle-o"></i>Mark Attendance</a></li>
                             </ul>
                         </li>
-                        <li class="treeview">
+                        <li class="treeview nPaM">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
                                 <span>User Account</span>
@@ -339,7 +339,7 @@
                                                 <th style="width:40px">#</th>
                                                 <th>Name</th>
                                                 <th>Date</th>
-                                                <th>Timetable</th>
+                                                <!--<th>Timetable</th>-->
                                                 <!--                                                <th>On Duty</th>
                                                                                                 <th>Off Duty</th>-->
                                                 <th>Clock In</th>
@@ -385,7 +385,7 @@
                                             <input disabled type="date" maxlength="40" class="form-control cuteReq" id="date" >
                                         </div>  
                                     </div>
-                                    <div class="form-group cuteReq" > 
+                                    <div class="form-group hidden cuteReq" > 
                                         <label class="col-sm-3 control-label">Time Table*</label>
                                         <div class="col-sm-9"> 
                                             <input type="text" maxlength="40" class="form-control cuteReq" id="timetable" >
@@ -430,9 +430,10 @@
                                     <div class="form-group cuteReq"> 
                                         <label class="col-sm-3 control-label">Absent*</label>
                                         <div class="col-sm-9"> 
-                                            <select class="form-control"  id="absent">
+                                            <select disabled class="form-control"  id="absent">
                                                 <option value="0">Present</option>
                                                 <option value="1">Absent</option>
+                                                <option selected value="0">Present(Edited)</option>
                                             </select>
                                         </div>  
                                     </div>
@@ -440,6 +441,12 @@
                                         <label class="col-sm-3 control-label">OT Time*</label>
                                         <div class="col-sm-9"> 
                                             <input type="time" class="form-control cuteReq" id="ot_time" >
+                                        </div>  
+                                    </div>
+                                    <div class="form-group cuteReq"> 
+                                        <label class="col-sm-3 control-label">Comment*</label>
+                                        <div class="col-sm-9"> 
+                                            <textarea maxlength="100" class="form-control cuteReq" id="comment" ></textarea>
                                         </div>  
                                     </div>
                                     <!--                                                <div class="form-group cuteReq"> 
@@ -528,16 +535,17 @@
 //                        $('.exeFileLoad').addClass('hidden');
                         $("#name").val(set[0].name);
                         $("#date").val(set[0].date);
-                        $("#timetable").val(set[0].timetable);
+                        $("#timetable").val(set[0].time_table);
 //                        $("#on_duty").val(set[0].on_duty);
 //                        $("#off_duty").val(set[0].off_duty);
                         $("#clock_in").val(set[0].clock_in);
                         $("#clock_out").val(set[0].clock_out);
 //                        $("#late").val(set[0].late);
 //                        $("#early").val(set[0].early);
-                        $("#absent").val(set[0].absent);
+//                        $("#absent").val(set[0].absent);
 //                        $("#ot_time").val(set[0].ot_time);
                         $("#work_time").val(set[0].work_time);
+                        $("#comment").val(set[0].comment);
                         $('#modal-attendUi').modal('show');
                         setOtherButtonValue(currentBtn);
                         setupBtnEnv();

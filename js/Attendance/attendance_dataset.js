@@ -8,17 +8,21 @@ function getAttendanceTableUI(callBack) {
                 table += "<td>" + id++ + "</td>";
                 table += "<td>" + set.name + "</td>";
                 table += "<td>" + set.date + "</td>";
-                table += "<td>" + set.time_table + "</td>";
+//                table += "<td>" + set.time_table + "</td>";
 //                table += "<td>" + set.on_duty + "</td>";
 //                table += "<td>" + set.off_duty + "</td>";
                 table += "<td>" + set.clock_in + "</td>";
                 table += "<td>" + set.clock_out + "</td>";
 //                table += "<td>" + set.late + "</td>";
 //                table += "<td>" + set.early + "</td>";
-                if (set.absent == 0) {
+                if (set.absent === 0) {
                     table += "<td><span class='label label-success'>Present</span></td>";
-                } else {
+                } else if (set.absent === 1) {
                     table += "<td><span class='label label-danger'>Absent</span></td>";
+                } else if (set.absent === 0 && set.updated_at !== null) {
+                    table += "<td><span class='label label-success'>Present(Edited)</span></td>";
+                }else{
+                    table += "<td><span class='label label-info'>Invalid</span></td>";
                 }
 //                table += "<td>" + set.ot_time + "</td>";
                 table += "<td>" + set.work_time + "</td>";
@@ -105,6 +109,7 @@ function formAttendData() {
         name: $('#name').val(),
         date: $('#date').val(),
         timetable: $('#timetable').val(),
+        comment: $('#comment').val(),
 //        on_duty: $('#on_duty').val(),
         clock_in: $('clock_in').val(),
         clock_out: $('#clock_out').val(),
