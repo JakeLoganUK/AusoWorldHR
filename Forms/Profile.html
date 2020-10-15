@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CopreusHR | Attendance</title>
+        <title>CopreusHR | User Profile</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- DataTables -->
         <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -22,6 +21,12 @@
         <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
         <link href="../dist/css/toastr.min.css" rel="stylesheet" type="text/css"/>
 
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <!-- Site wrapper -->
@@ -157,7 +162,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="../Forms/Profile.html" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="Profile.html" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
                                             <a href="javascript:logOutUser();" class="btn btn-default btn-flat">Sign out</a>
@@ -229,14 +234,15 @@
                                 <li  class="active"><a href="ApplyForLeave.html"><i class="fa fa-circle-o"></i> Apply For Leave</a></li>
                             </ul>
                         </li>
-                        <li class="treeview active">
+                        <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-files-o"></i>
                                 <span>Attendance</span>
+                                <span class="label label-info">5</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="Attendance.html"><i class="fa fa-circle-o"></i>Mark Attendance</a></li>
+                                <li><a href="../Forms/Attendance.html"><i class="fa fa-circle-o"></i>Mark Attendance</a></li>
                             </ul>
                         </li>
                         <li class="treeview nPaM">
@@ -273,8 +279,8 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Attendance
-                        <small>Mark New Attendance</small>
+                        User Profile Settings
+                        <small>Change your profile settings</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -289,7 +295,7 @@
                             <!-- AREA CHART -->
                             <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Upload Attendance</h3>
+                                    <h3 class="box-title">Profile Info</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -298,175 +304,86 @@
                                 <div class="box-body" style="display: block;">
 
                                     <!-- form start -->
-                                    <form class="form-horizontal">
+                                    <div class="form-horizontal">
                                         <div class="box-body"> 
-                                            <!--                                            <div class="form-group cuteReq"> 
-                                                                                            <label class="col-sm-3 control-label">Account Number*</label>
-                                                                                            <div class="col-sm-9"> 
-                                                                                                <input type="number" maxlength="40" class="form-control cuteReq onlyZupNum" id="ac_no">
-                                                                                            </div>  
-                                                                                        </div>-->
-                                            <div class="form-group exeFileLoad cuteReq"> 
-                                                <label class="col-sm-3 control-label">Excel File*</label>
+                                            <div class="form-group cuteReq"> 
+                                                <label class="col-sm-3 control-label">Username</label>
                                                 <div class="col-sm-9"> 
-                                                    <input type="file" class="form-control cuteReq" id="file-type">
+                                                    <input disabled type="text" maxlength="40" class="form-control cuteReq onlyZupNum" id="username" placeholder="Enter Text..">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group cuteReq"> 
+                                                <label class="col-sm-3 control-label">First Name</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" maxlength="40" class="form-control cuteReq onlyZupNum" id="first_name" placeholder="Enter Text..">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group cuteReq"> 
+                                                <label class="col-sm-3 control-label">Last Name</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="text" maxlength="40" class="form-control cuteReq onlyZupNum" id="last_name" placeholder="Enter Text..">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group cuteReq"> 
+                                                <label class="col-sm-3 control-label">Address</label>
+                                                <div class="col-sm-9"> 
+                                                    <textarea maxlength="60" class="form-control cuteReq onlyZupNum" id="address" placeholder="Enter Text.."></textarea>
                                                 </div>  
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                     <div class="box-footer"> 
-                                        <a href="javascript:resetAttendClientSideData();" class="btn btn-default">Cancel</a>
-                                        <button  id="saveBtn" class="btn btn-info pull-right basic_Save">Save</button>
+                                        <a href="javascript:resetLGClientSideData();" class="btn btn-default">Cancel</a>
+                                        <button  id="saveBtn" class="btn btn-info pull-right basic_Save">Save Changes</button>
+                                        <button  id="updateBtn" class="btn btn-warning hidden">Update</button>
+                                        <button  id="removeBtn" class="btn btn-danger pull-right hidden">Remove</button>
                                     </div>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
-
-
                         </div><!-- /.col (LEFT) -->
-                        <div class="col-md-12">
-                            <!-- BAR CHART -->
-                            <div class="box box-success">
+                        <div class="col-md-6">
+                            <div class="box box-primary">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">List Of Attendance</h3>
+                                    <h3 class="box-title">Change Password</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
                                 </div>
-                                <div class="box-body">
-                                    <table id="attandanceFullList" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th style="width:40px">#</th>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <!--<th>Timetable</th>-->
-                                                <!--                                                <th>On Duty</th>
-                                                                                                <th>Off Duty</th>-->
-                                                <th>Clock In</th>
-                                                <th>Clock Out</th>
-                                                <!--                                                <th>Late</th>
-                                                                                                <th>Early</th>-->
-                                                <th>Absent</th>  <!-- yes or no-->
-                                                <!--                                                <th>OT Time</th>-->
-                                                <th>Work Time</th>
-                                                <th>#</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
+                                <!-- Personal Informations-->
+                                <div class="box-body" style="display: block;">
+
+                                    <!-- form start -->
+                                    <div class="form-horizontal">
+                                        <div class="box-body"> 
+                                            <div class="form-group cuteReq"> 
+                                                <label class="col-sm-3 control-label">Existing Password</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="password" maxlength="40" class="form-control cuteReq onlyZupNum" id="current_pass" placeholder="Enter Text..">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group cuteReq"> 
+                                                <label class="col-sm-3 control-label">New Password</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="password" maxlength="40" class="form-control cuteReq onlyZupNum" id="new_pass" placeholder="Enter Text..">
+                                                </div>  
+                                            </div>
+                                            <div class="form-group cuteReq"> 
+                                                <label class="col-sm-3 control-label">Re-Enter New Password</label>
+                                                <div class="col-sm-9"> 
+                                                    <input type="password" maxlength="40" class="form-control cuteReq onlyZupNum" id="conf_pass" placeholder="Enter Text..">
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-footer"> 
+                                        <button  id="changePassBtn" class="btn btn-info pull-right basic_Save">Change Password</button>
+                                    </div>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
-
                         </div>
-                    </div><!-- /.row -->               
+                    </div><!-- /.row -->
+
                 </section>
-
-
-                <div class="modal fade" id="modal-attendUi">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title">Update Attendance</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form class="form-horizontal">
-                                    <div class="form-group cuteReq" > 
-                                        <label class="col-sm-3 control-label">Name*</label>
-                                        <div class="col-sm-9"> 
-                                            <input type="text" maxlength="40" class="form-control cuteReq" id="name" >
-                                        </div>  
-                                    </div>
-                                    <div class="form-group cuteReq"> 
-                                        <label class="col-sm-3 control-label">Date*</label>
-                                        <div class="col-sm-9"> 
-                                            <input disabled type="date" maxlength="40" class="form-control cuteReq" id="date" >
-                                        </div>  
-                                    </div>
-                                    <div class="form-group hidden cuteReq" > 
-                                        <label class="col-sm-3 control-label">Time Table*</label>
-                                        <div class="col-sm-9"> 
-                                            <input type="text" maxlength="40" class="form-control cuteReq" id="timetable" >
-                                        </div>  
-                                    </div>
-                                    <!--                                                <div class="form-group cuteReq"> 
-                                                                                        <label class="col-sm-3 control-label">On Duty*</label>
-                                                                                        <div class="col-sm-9"> 
-                                                                                            <input type="time" class="form-control cuteReq" id="on_duty" >
-                                                                                        </div>  
-                                                                                    </div>
-                                                                                    <div class="form-group cuteReq" > 
-                                                                                        <label class="col-sm-3 control-label">Off Duty*</label>
-                                                                                        <div class="col-sm-9"> 
-                                                                                            <input type="time" class="form-control cuteReq" id="off_duty" >
-                                                                                        </div>  
-                                                                                    </div>-->
-                                    <div class="form-group cuteReq" > 
-                                        <label class="col-sm-3 control-label">Clock In*</label>
-                                        <div class="col-sm-9"> 
-                                            <input type="time" class="form-control cuteReq" id="clock_in" >
-                                        </div>  
-                                    </div>
-                                    <div class="form-group cuteReq"> 
-                                        <label class="col-sm-3 control-label">Clock Out*</label>
-                                        <div class="col-sm-9"> 
-                                            <input type="time" class="form-control cuteReq" id="clock_out" >
-                                        </div>  
-                                    </div>
-                                    <!--                                                <div class="form-group cuteReq"> 
-                                                                                        <label class="col-sm-3 control-label">Late*</label>
-                                                                                        <div class="col-sm-9"> 
-                                                                                            <input type="time" class="form-control cuteReq" id="late" >
-                                                                                        </div>  
-                                                                                    </div>
-                                                                                    <div class="form-group cuteReq"> 
-                                                                                        <label class="col-sm-3 control-label">Early*</label>
-                                                                                        <div class="col-sm-9"> 
-                                                                                            <input type="time" class="form-control cuteReq" id="early" >
-                                                                                        </div>  
-                                                                                    </div>-->
-                                    <div class="form-group cuteReq"> 
-                                        <label class="col-sm-3 control-label">Absent*</label>
-                                        <div class="col-sm-9"> 
-                                            <select disabled class="form-control"  id="absent">
-                                                <option value="0">Present</option>
-                                                <option value="1">Absent</option>
-                                                <option selected value="0">Present(Edited)</option>
-                                            </select>
-                                        </div>  
-                                    </div>
-                                    <div class="form-group cuteReq"> 
-                                        <label class="col-sm-3 control-label">OT Time*</label>
-                                        <div class="col-sm-9"> 
-                                            <input type="time" class="form-control cuteReq" id="ot_time" >
-                                        </div>  
-                                    </div>
-                                    <div class="form-group cuteReq"> 
-                                        <label class="col-sm-3 control-label">Comment*</label>
-                                        <div class="col-sm-9"> 
-                                            <textarea maxlength="100" class="form-control cuteReq" id="comment" ></textarea>
-                                        </div>  
-                                    </div>
-                                    <!--                                                <div class="form-group cuteReq"> 
-                                                                                        <label class="col-sm-3 control-label">Work Time*</label>
-                                                                                        <div class="col-sm-9"> 
-                                                                                            <input type="time" class="form-control cuteReq" id="work_time" >
-                                                                                        </div>  
-                                                                                    </div>-->
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                <button  id="updateBtn" class="btn btn-warning hidden">Update</button>
-                                <button  id="removeBtn" class="btn btn-danger pull-right hidden">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
 
             </div><!-- /.content-wrapper -->
 
@@ -488,7 +405,6 @@
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <!-- DataTables -->
         <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
         <!-- SlimScroll -->
         <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
@@ -500,91 +416,113 @@
         <script src="../dist/js/demo.js"></script>
         <script src="../js/check_login.js" type="text/javascript"></script>
         <script src="../js/funtions.js" type="text/javascript"></script>
+        <script src="../js/LeaveGroups/leave_group_dataset.js" type="text/javascript"></script>
         <script src="../js/Functions/common_validations.js" type="text/javascript"></script>
         <script src="../dist/js/toastr.min.js" type="text/javascript"></script>
-        <script src="../js/Attendance/attendance_dataset.js" type="text/javascript"></script>
-        <script src="../js/Attendance/attendance_type_method.js" type="text/javascript"></script>
-        <script src="../js/Functions/file_uploader.js" type="text/javascript"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+        <script src="../js/LeaveTypes/leave_type_method.js" type="text/javascript"></script>
         <!-- page script -->
         <script>
+            var ITEM_LIST = [];
             var USER_ID = '';
             $(function () {
-//                getLeaveTypeTableUI(); //<-Load Table
-                getAttendanceTableUI();
+                leaveTypesCombo();
+                getLeaveGroupTableUI();
+
+                $('#btnSetleaveType').click(function () {
+                    add_itemToBill();
+                });
+                function add_itemToBill() {
+                    let leave_id = parseInt($('#leave_type').val());
+                    let leave_name = $('#leave_type :selected').html();
+                    if (isValueExsist(leave_id)) {
+                        alert('"' + leave_name + '" already added !');
+                        return false;
+                    }
+                    if (isNaN(leave_id)) {
+                        alert("invalid Application Type!");
+                        return false;
+                    }
+                    ITEM_LIST.push({id: leave_id, leave_type: leave_name});
+                    selectedApplication_table(ITEM_LIST);
+                }
+                function isValueExsist(value) {
+                    let ret = false;
+                    $.map(ITEM_LIST, function (val) {
+                        if (val.id == value) {
+                            ret = true;
+                        }
+                    });
+                    return ret;
+                }
+                //Member remove button action 
+                $(document).on('click', '.app_removeBtn', function () {
+                    remove_itemFrom_bill($(this).val());
+                });
+                function remove_itemFrom_bill(rem_val) {
+// get index of object with id:37
+                    var removeIndex = ITEM_LIST.map(function (item) {
+                        return item.id;
+                    }).indexOf(rem_val);
+// remove object
+                    ITEM_LIST.splice(removeIndex, 1);
+                    selectedApplication_table(ITEM_LIST);
+                }
+
                 //Save
                 $('#saveBtn').click(function () {
-                    var data = formAttendDataUpload();
-                    if (AttendanceRequiredFieldHandler(data, 1, ".cuteReq")) {
-                        methodAttendanceSYS(data, 1, null, function (resp) {
+                    var data = formLeaveData();
+                    if (leaveGroupRequiredFieldHandler(data, 1, ".cuteReq")) {
+                        methodLeaveGroupSYS(data, 1, null, function (resp) {
                             if (resp.id === 1) {
-//                                getLeaveTypeTableUI();
-                                resetLTClientSideData();
+                                getLeaveGroupTableUI();
+                                resetLGClientSideData();
                             }
-                            show_result_alert(resp, 'Attendance File Created');
+                            show_result_alert(resp, 'Leave Group Created');
                         });
                     }
                 });
 //Table Action Button
                 $(document).on('click', '.reqActionBtn', function () {
                     let currentBtn = $(this).val();
-                    attendanceAttributeHandler(currentBtn, 1, function (set) {
-//                        $("#file-type,#date").focus();
-//                        $('.exeFileLoad').addClass('hidden');
-                        $("#name").val(set[0].name);
-                        $("#date").val(set[0].date);
-                        $("#timetable").val(set[0].time_table);
-//                        $("#on_duty").val(set[0].on_duty);
-//                        $("#off_duty").val(set[0].off_duty);
-                        $("#clock_in").val(set[0].clock_in);
-                        $("#clock_out").val(set[0].clock_out);
-//                        $("#late").val(set[0].late);
-//                        $("#early").val(set[0].early);
-//                        $("#absent").val(set[0].absent);
-//                        $("#ot_time").val(set[0].ot_time);
-                        $("#work_time").val(set[0].work_time);
-                        $("#comment").val(set[0].comment);
-                        $('#modal-attendUi').modal('show');
+                    leaveGroupAttributeHandler(currentBtn, 1, function (set) {
+                        $("#leave_group").val(set[0].name);
+//                        $("#no_of_days").val(set[0].no_of_days);
                         setOtherButtonValue(currentBtn);
                         setupBtnEnv();
                     });
                 });
                 //Update
                 $('#updateBtn').click(function () {
-                    let currentBtn = $(this).val();
-                    var data = formAttendData();
-                    if (AttendanceRequiredFieldHandler(data, 2, ".cuteReq")) {
-                        methodAttendanceAJAX(data, 2, currentBtn, function (resp) {
-                            if (resp.id === 1) {
-                                location.reload();
-                                getAttendanceTableUI();
-                                resetAttendClientSideData();
-                            }
-                            show_result_alert(resp, 'Attendance Updated');
-                        });
-                    }
+//                    let currentBtn = $(this).val();
+//                    var data = formLeaveData();
+                    show_message(2, 'Not Allowd To Update.Please Remove And Add New Group!');
                 });
                 //Remove
                 $('#removeBtn').click(function () {
                     let currentBtn = $(this).val();
-                    if (confirm('Are you sure you want to remove this?')) {
-                        methodAttendanceAJAX(null, 3, currentBtn, function (resp) {
-                            if (resp.id === 1) {
-                                location.reload();
-                                getAttendanceTableUI();
-                                resetAttendClientSideData();
-                            }
-                            show_result_alert(resp, 'Attendance Removed');
-                        });
-                    }
+                    methodLeaveGroupSYS(null, 3, currentBtn, function (resp) {
+                        if (resp.id === 1) {
+                            getLeaveGroupTableUI();
+                            resetLGClientSideData();
+                        }
+                        show_result_alert(resp, 'Leave Group Removed');
+                    });
                 });
             });
         </script>
 
         <script>
+//           var auth_Pack = JSON.stringify(localStorage.getItem("copr_auth_set"));
+            var auth_Pack = JSON.parse(localStorage.getItem("copr_auth_set"));
+            //Setup Lines
+            $('#username').val(auth_Pack['user_name']);
+            $('#first_name').val(auth_Pack['first_name']);
+            $('#last_name').val(auth_Pack['last_name']);
+            $('#').val(auth_Pack['user_name']);
+            $('#').val(auth_Pack['user_name']);
+            //Setup Lines END 
             $(document).ready(function () {
+
             });
 
         </script>
