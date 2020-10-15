@@ -1,4 +1,4 @@
-var debug_on = 1; //Debug Me 0/1
+var debug_on = 0; //Debug Me 0/1
 var base_path = 'https://www.qa.ceytechsystemsolutions.com/userManagement/public/'; //Enter Base API URL
 var base_url = 'file:///C:/xampp/htdocs/HRM/AusoWorldHR/'; //Please Enter Your Basic URL
 
@@ -67,11 +67,4 @@ function show_message(type, msg) { //Type - Success = 1, Warn = 2 & Error = 3
 //OpeN User Auth Setup
 var logged_User = localStorage.getItem('copr_uname');
 $('.corp_log_user').text(logged_User);
-var userPriv = 0;
-if (userPriv === 0) {
-//Do nothing for now
-} else {
-    $('.nPaM').remove(); //Not privilaged Admin
-}
-
 //ClosE Auth Setup

@@ -86,6 +86,14 @@ function removeUserAPI(id, callBack) {
         }
     });
 }
+//Get Tire Set
+function getTiresAPI(callBack) {
+    ajaxRequest('GET', base_path + "api/1.0.0/tire", null, function (dataSet) {
+        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+            callBack(dataSet);
+        }
+    });
+}
 
 function resetClientSideData() {
 //Reset all forms ex by clientside
