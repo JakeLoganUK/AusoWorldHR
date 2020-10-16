@@ -26,7 +26,11 @@ function getAttendanceTableUI(callBack) {
                 }
 //                table += "<td>" + set.ot_time + "</td>";
                 table += "<td>" + set.work_time + "</td>";
-                table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn nPaM btn-sm'><i class='fa fa-edit'></i></button></td>";
+                if (localStorage.getItem('copr_utype') != 0) {
+                    table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn nPaM btn-sm'><i class='fa fa-edit'></i></button></td>";
+                } else {
+                    table += "<td style='width: 10px'></td>";
+                }
                 table += "</tr>";
             });
         } else {
