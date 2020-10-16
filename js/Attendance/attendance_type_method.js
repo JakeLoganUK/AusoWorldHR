@@ -31,6 +31,7 @@ function methodAttendanceAJAX(data, method, id, callBack) {
     //Current Usage Explained - POST/1 , PUT/2 , DELETE/3 , GET/4
     let DATA_METHOD = '';
     let URL = '';
+    let auth_Pack = JSON.parse(localStorage.getItem("copr_auth_set"));
 
     if (method === 1) {
         DATA_METHOD = 'POST';
@@ -44,6 +45,9 @@ function methodAttendanceAJAX(data, method, id, callBack) {
     } else if (method === 4) {
         DATA_METHOD = 'GET';
         URL = base_path + 'api/1.0.0/attendance';
+    } else if (method === 5) {
+        DATA_METHOD = 'GET';
+        URL = base_path + 'api/1.0.0/attendance/user_id/' + auth_Pack['id'];
     } else {
         return false;
     }
