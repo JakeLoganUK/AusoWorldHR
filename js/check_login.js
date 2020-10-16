@@ -5,7 +5,7 @@ if (localStorage.getItem('othKey') == undefined) {
 //User Auth Controller
 let user_role = localStorage.getItem('copr_utype');
 if (user_role == 0) {//User
-    $('.nPaM').remove(); //Not privilaged Admin
+    $('.nPaM').remove(); //Not privilaged Admin(nPaM)
 } else if (user_role == 1) {//Admin
     //Do Nothing Its Admin
 } else if (user_role == 2) {//Editor

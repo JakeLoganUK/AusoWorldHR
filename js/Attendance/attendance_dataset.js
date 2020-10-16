@@ -21,12 +21,12 @@ function getAttendanceTableUI(callBack) {
                     table += "<td><span class='label label-danger'>Absent</span></td>";
                 } else if (set.absent === 0 && set.updated_at !== null) {
                     table += "<td><span class='label label-success'>Present(Edited)</span></td>";
-                }else{
+                } else {
                     table += "<td><span class='label label-info'>Invalid</span></td>";
                 }
 //                table += "<td>" + set.ot_time + "</td>";
                 table += "<td>" + set.work_time + "</td>";
-                table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn btn-sm'><i class='fa fa-edit'></i></button></td>";
+                table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn nPaM btn-sm'><i class='fa fa-edit'></i></button></td>";
                 table += "</tr>";
             });
         } else {
@@ -80,6 +80,10 @@ function AttendanceRequiredFieldHandler(frm_data, action, required_class) {
     var response = true;
     if (frm_data.timetable.length == 0) {
         toastr.error('Timetable Required!');
+        response = false;
+    }
+    if (frm_data.comment.length == 0) {
+        toastr.error('Comment Required!');
         response = false;
     }
     if (action === 1) { //Actions only in Save
