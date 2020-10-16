@@ -5,9 +5,9 @@ userAuthAPI(function (e) {
     localStorage.setItem('copr_auth_set', JSON.stringify(e));
     $('.corp_log_user').text(e.first_name + ' ' + e.last_name);
     let role0f_User = e.is_admin;
-    if (role0f_User === 0) {
+    if (role0f_User == 0) {
         $('.nPaM').remove(); //Not privilaged Admin
-        alert(roleOf_User);
+        $('.viewUr').text('View Attendance');
     } else if (role0f_User === 1) {
         //Do Nothing Its Admin
     } else if (role0f_User === 2) {

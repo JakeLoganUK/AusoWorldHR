@@ -1,7 +1,15 @@
 function getAttendanceTableUI(callBack) {
     var table = "";
     var id = 1;
-    methodAttendanceAJAX(null, 4, null, function (dataSet) {
+    let USER_ROLE = localStorage.getItem('copr_utype');
+    let SET_METHOD = '';
+
+    if (USER_ROLE == 0) {
+        SET_METHOD = 5;
+    } else {
+        SET_METHOD = 4;
+    }
+    methodAttendanceAJAX(null, SET_METHOD, null, function (dataSet) {
         if (dataSet) {
             $.each(dataSet, function (index, set) {
                 table += "<tr>";
@@ -19,7 +27,7 @@ function getAttendanceTableUI(callBack) {
                     table += "<td><span class='label label-success'>Present</span></td>";
                 } else if (set.absent === 1) {
                     table += "<td><span class='label label-danger'>Absent</span></td>";
-                } else if (set.absent === 0 && set.updated_at !== null) {
+                } else if (set.absent === 2) {
                     table += "<td><span class='label label-success'>Present(Edited)</span></td>";
                 } else {
                     table += "<td><span class='label label-info'>Invalid</span></td>";
@@ -61,6 +69,8 @@ function attendanceAttributeHandler(data, type, callBack) {
             attribute = 'date';
         } else if (type === 4) {
             attribute = 'absent';
+        } else if (type === 5) {
+            attribute = 'user_id';
         }
     } else {
         return false;
