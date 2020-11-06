@@ -2,19 +2,19 @@
 //Current Action = save/1 , update/2
 function applyLeaveRequiredFieldHandler(frm_data, action, required_class) {
     var response = true;
-    if (frm_data.from_date.length == 0) {
-        toastr.error('From Date Required!');
-        response = false;
-    }
-    if (frm_data.to_date.length == 0) {
-        toastr.error('To Date Required!');
-        response = false;
-    }
-    if (frm_data.comment.length == 0) {
-        toastr.error('Comment Required!');
-        response = false;
-    }
-    if (action == 1) {
+    if (action == 1 || action == 2) {
+        if (frm_data.from_date.length == 0) {
+            toastr.error('From Date Required!');
+            response = false;
+        }
+        if (frm_data.to_date.length == 0) {
+            toastr.error('To Date Required!');
+            response = false;
+        }
+        if (frm_data.comment.length == 0) {
+            toastr.error('Comment Required!');
+            response = false;
+        }
     }
     $(required_class).each(function () {
         if ($(this).val().length === 0) {
@@ -52,11 +52,11 @@ function getLeaveApplyTableUI(callBack) {
                 table += "<td>" + id++ + "</td>";
                 table += "<td>" + set.comment + "</td>";
                 if (set.status == 0) {
-                table += "<td><span class='label label-warning'>Pending</span></td>";
-                }else if (set.status == 1) {
-                table += "<td><span class='label label label-success'>Approved</span></td>";
-                }else{
-                table += "<td><span class='label label-danger'>Rejected</span></td>";
+                    table += "<td><span class='label label-warning'>Pending</span></td>";
+                } else if (set.status == 1) {
+                    table += "<td><span class='label label label-success'>Approved</span></td>";
+                } else {
+                    table += "<td><span class='label label-danger'>Rejected</span></td>";
                 }
                 table += "<td style='width: 10px'><button type='button' value='" + set.id + "' class='btn btn-block btn-dark reqActionBtn btn-sm'><i class='fa fa-edit'></i></button></td>";
                 table += "</tr>";

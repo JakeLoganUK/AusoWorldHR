@@ -482,36 +482,16 @@
                     });
                 });
                 //Update User
-                $("#updateBtn").click(function () {
-                    var data = {
-                        "user_name": $("#username").val(),
-                        "initials": $("#initials").val(),
-                        "first_name": $("#first_Name").val(),
-                        "last_name": $("#last_Name").val(),
-                        "surname": $("#surname").val(),
-                        "nic": $("#nic").val(),
-                        "date_of_birth": $("#dateOfBirth").val(),
-                        "gender": $("#gender").val(),
-                        "title": $("#title").val(),
-                        "religion": $("#religion").val(),
-                        "nationality": $("#nationality").val(),
-                        "race": $("#race").val(),
-                        "email": $("#email").val(),
-                        "mobile": $("#mobile").val(),
-                        "land_line": $("#land_Line").val(),
-                        "status": $("#status").val(),
-                        "civil_status": $("#civil_Status").val(),
-//                        "password": $("#password").val(),
-//                        "address": $("#permanent_Address").val(),
-                        "userParams": getOtherDetails()
-                    };
-                    if (userRequiredFieldHandler(data, 2, ".cuteReq")) {
-                        updateUserAPI($(this).val(), data, function (resp) {
-                            if (resp.id == 1) {
-                                resetClientSideData();
-                                usersTable();
+                $('#updateBtn').click(function () {
+                    let currentBtn = $(this).val();
+                    var data = formLeaveApplyData();
+                    if (applyLeaveRequiredFieldHandler(data, 2, ".cuteReq")) {
+                        methodLeaveApplySYS(data, 2, currentBtn, function (resp) {
+                            if (resp.id === 1) {
+                                getLeaveApplyTableUI();
+                                resetLTClientSideData();
                             }
-                            show_result_alert(resp, 'User Updated!');
+                            show_result_alert(resp, 'Leave Apply Updated');
                         });
                     }
                 });
