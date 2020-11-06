@@ -35,7 +35,7 @@ function formLeaveApplyData() {
         to_date: $('#leaveTo').val(),
         user_id: $('#assignUser').val(),
         comment: $('#comment').val(),
-        attachment: $('#attachment').val(),
+        attachment: $('#file-type')[0].files[0],
         status: $('#status').val()
     };
     return data;
