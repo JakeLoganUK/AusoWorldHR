@@ -1,6 +1,0 @@
-[1015/001624.268:ERROR:crash_report_database_win.cc(498)] failed to stat report
-[1015/002624.258:ERROR:crash_report_database_win.cc(498)] failed to stat report
-[1015/002624.258:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\Akalanka\AppData\Local\Google\Chrome\User Data\Crashpad\reports\3460d2e3-135c-400d-80c6-5d36b048b82b.dmp: The system cannot find the file specified. (0x2)
-[1015/002624.259:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
-[1015/203743.346:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
-[1016/190701.008:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
