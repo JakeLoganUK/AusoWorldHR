@@ -279,8 +279,8 @@
                                 <span class="info-box-icon bg-aqua"><i class="ion ion-icecream"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Today Birthdays</span>
-                                    <span class="info-box-number show_today_birth">2<small></small></span>
+                                    <span class="info-box-text ">Today Birthdays</span>
+                                    <span class="info-box-number birthdayCount">2<small></small></span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -292,8 +292,8 @@
                                 <span class="info-box-icon bg-red"><i class="fa ion-ios-people-outline"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Active Employees</span>
-                                    <span class="info-box-number show_active_emp">500</span>
+                                    <span class="info-box-text">Today Attendance</span>
+                                    <span class="info-box-number attendanceCount">500</span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -309,7 +309,7 @@
                                 <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Leave Employees</span>
-                                    <span class="info-box-number show_leave_emp">0</span>
+                                    <span class="info-box-number pendingLeaveCount">0</span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -496,7 +496,11 @@
                 //handle user views
                 getAllUsersAPI(function (rest) {
                     $('.show_all_emp').text(rest.length);
-                    $('.show_active_emp').text(rest.length);
+                });
+                getCountsAPI(function (rest) {
+                    $('.birthdayCount').text(rest.birthdayCount);
+                    $('.attendanceCount').text(rest.attendanceCount);
+                    $('.pendingLeaveCount').text(rest.pendingLeaveCount);
                 });
             });
         </script>
