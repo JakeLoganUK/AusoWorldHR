@@ -15,7 +15,14 @@ function userAuthAPI(callBack) {
         }
     });
 }
-
+//Get Counts
+function getCountsAPI(callBack) {
+    ajaxRequest('GET', base_path + "api/1.0.0/counts", null, function (dataSet) {
+        if (typeof callBack !== 'undefined' && callBack != null && typeof callBack === "function") {
+            callBack(dataSet);
+        }
+    });
+}
 
 //Debug On Dashboard
 if (debug_on === 1) {
